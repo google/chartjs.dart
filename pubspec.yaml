@@ -1,0 +1,10 @@
+name: chartjs
+version: 0.1.0-dev
+description: Chart.js wrapper for Dart
+author: Kevin Moore <github@j832.com>
+environment:
+  sdk: '>=1.13.0-dev.7 <2.0.0'
+dependencies:
+  js: ^0.6.0-beta.7
+dev_dependencies:
+  browser: ^0.10.0+2
