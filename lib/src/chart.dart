@@ -9,10 +9,51 @@ import 'package:js/js.dart';
 
 import 'data.dart';
 import 'options.dart';
+import 'data_set.dart';
 
-@JS()
+@JS("Chart")
 class Chart {
   external Chart(CanvasRenderingContext2D ctx);
+  external dynamic Line(Data data, LineOptions options);
+  external dynamic Bar(Data data, BarOptions options);
+  external dynamic Radar(Data data, RadarOptions options);
+  external dynamic PolarArea(List<SegmentData> data, PolarOptions options);
+  external dynamic Doughnut(List<SegmentData> data, PieOptions options);
+  external dynamic Pie(List<SegmentData> data, PieOptions options);
+  external String generateLegend();
+  external void removeData(num index);
+  external void update();
+  external Chart stop();
+  external Chart render();
+  external Chart resize();
+  external void destroy();
+  external Chart clear();
+}
 
-  external dynamic Line(Data data, Options options);
+@JS("Chart")
+class LineChart extends Chart {
+  external factory LineChart(CanvasRenderingContext2D ctx);
+  external addData(valuesArray, label);
+  external List<EvtDataPoint> getPointsAtEvent(Event event);
+}
+
+@JS("Chart")
+class BarChart extends Chart {
+  external factory BarChart(CanvasRenderingContext2D ctx);
+  external addData(valuesArray, label);
+  external List<EvtDataPoint> getBarsAtEvent(Event event);
+}
+
+@JS("Chart")
+class RadarChart extends Chart {
+  external factory RadarChart(CanvasRenderingContext2D ctx);
+  external addData(valuesArray, label);
+  external List<EvtDataPoint> getPointsAtEvent(Event event);
+}
+
+@JS("Chart")
+class PolarChart extends Chart {
+  external factory PolarChart(CanvasRenderingContext2D ctx);
+  external addData(SegmentData segmentData, label);
+  external List<EvtDataPoint> getSegmentsAtEvent(Event event);
 }

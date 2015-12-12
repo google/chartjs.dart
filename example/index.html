@@ -8,17 +8,41 @@
     <style type="text/css">
       div.wrapper {
         margin: 0 auto;
-        max-width: 600px;
+        max-width: 100%;
         text-align: center;
         font-style: italic;
+      }
+      ul {
+        display: flex;
+      }
+      li span{
+        width: 100px;
+display: inline-block;
+min-width: 100px;
+min-height: 20px;
+
+      }
+      li{
+        list-style-type: none;
       }
     </style>
   </head>
   <body>
+      Example of the <a href="https://github.com/google/chartjs.dart">Dart API for Chart.js</a>
     <div>
     <div class="wrapper">
-      <canvas id="canvas" height="450" width="600"></canvas>
-      Example of the <a href="https://github.com/google/chartjs.dart">Dart API for Chart.js</a>
+      <h1>Line Chart<h1>
+      <canvas id="line" height="450" width="800"></canvas>
+      <h1>Bar Chart<h1>
+      <canvas id="bar" height="450" width="800"></canvas>
+      <h1>Radar Chart<h1>
+      <canvas id="radar" height="450" width="800"></canvas>
+      <h1>Polar Chart<h1>
+      <canvas id="polar" height="450" width="800"></canvas>
+      <h1>Pie Chart<h1>
+      <canvas id="pie" height="450" width="800"></canvas>
+      <h1>Doughnut Chart<h1><div id='doughnutLeg'></div>
+      <canvas id="doughnut" height="450" width="800"></canvas>
     </div>
     </div>
   </body>
