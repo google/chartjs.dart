@@ -279,6 +279,7 @@ class CircularInstance extends ChartInstance {
   external void update();
   external void addData(CircularChartData valuesArray, [num index]);
   external void removeData(num index);
+  external void showTooltip(List<CircularChartData> segments);
   external List<CircularChartData> get segments;
   external set segments(List<CircularChartData> v);
 }
