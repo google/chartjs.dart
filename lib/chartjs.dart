@@ -6,6 +6,7 @@
 // Definitions by: Steve Fenton <https://github.com/Steve-Fenton>
 // Definitions: https://github.com/borisyankov/DefinitelyTyped
 
+@JS()
 library chartjs;
 
 import "dart:html";
@@ -501,6 +502,12 @@ class Chart {
       [PieChartOptions options]);
 
   external Chart(CanvasRenderingContext2D context);
-  external static dynamic get defaults;
-  external static set defaults(dynamic v);
+  external static Chart_defaults get defaults;
+  external static set defaults(Chart_defaults v);
+}
+
+@anonymous
+@JS()
+class Chart_defaults {
+  external ChartSettings get global;
 }

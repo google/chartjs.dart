@@ -1,6 +1,12 @@
+## 0.2.0+1
+
+* Fixes for Dart 1.16 JS interop requirements.
+
+* Experimented with adding `defaults` value.
+
 ## 0.2.0
 
-* Includes complete `chartjs` API.
+* **BREAKING** Includes complete `chartjs` API.
 
 * Requires Dart `v1.13.1`.
 

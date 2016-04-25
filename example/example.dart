@@ -9,25 +9,18 @@ library chartjs.example;
 // On 2015-10-15
 
 import 'dart:html';
-import 'dart:math';
+import 'dart:math' as math;
 
 import 'package:chartjs/chartjs.dart';
-import 'package:js/js.dart';
 
 void main() {
+  Chart.defaults.global.responsive = true;
+
   var ctx = (querySelector('#canvas') as CanvasElement).context2D;
+  var rnd = new math.Random();
+  var months = <String>["January", "February", "March", "April", "May", "June"];
 
-  var rnd = new Random();
-
-  var data = new LinearChartData(labels: <String>[
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July"
-  ], datasets: <ChartDataSet>[
+  var data = new LinearChartData(labels: months, datasets: <ChartDataSet>[
     new ChartDataSet(
         label: "My First dataset",
         fillColor: "rgba(220,220,220,0.2)",
@@ -36,15 +29,7 @@ void main() {
         pointStrokeColor: "#fff",
         pointHighlightFill: "#fff",
         pointHighlightStroke: "rgba(220,220,220,1)",
-        data: [
-          rnd.nextInt(100),
-          rnd.nextInt(100),
-          rnd.nextInt(100),
-          rnd.nextInt(100),
-          rnd.nextInt(100),
-          rnd.nextInt(100),
-          rnd.nextInt(100)
-        ]),
+        data: months.map((_) => rnd.nextInt(100)).toList()),
     new ChartDataSet(
         label: "My Second dataset",
         fillColor: "rgba(151,187,205,0.2)",
@@ -53,15 +38,7 @@ void main() {
         pointStrokeColor: "#fff",
         pointHighlightFill: "#fff",
         pointHighlightStroke: "rgba(151,187,205,1)",
-        data: [
-          rnd.nextInt(100),
-          rnd.nextInt(100),
-          rnd.nextInt(100),
-          rnd.nextInt(100),
-          rnd.nextInt(100),
-          rnd.nextInt(100),
-          rnd.nextInt(100)
-        ])
+        data: months.map((_) => rnd.nextInt(100)).toList())
   ]);
 
   new Chart(ctx).Line(data, new LineChartOptions(pointDotRadius: 10));
