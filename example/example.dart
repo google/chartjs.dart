@@ -10,17 +10,43 @@ library chartjs.example;
 // On 2015-10-15
 
 import 'dart:html';
-import 'dart:math' as math;
+import 'dart:async';
 
 import 'package:chartjs/chartjs.dart';
 
+CanvasRenderingContext2D ctx;
+Chart chart;
+
 void main() {
   Chart.defaults.global.responsive = true;
-  var ctx = (querySelector('#canvas') as CanvasElement).context2D;
+  ctx = (querySelector('#canvas') as CanvasElement).context2D;
 
-  /// http://www.chartjs.org/docs/#getting-started-creating-a-chart
-  /*new Chart(ctx, new ChartConfiguration(
-      type: 'bar',
+  List<Function> examples = [
+    createChart,
+    mixedChartType,
+    lineDatasetStructure,
+    scatterLines,
+    stackedLines,
+    barChart
+  ];
+
+  int i = 0;
+  examples[i++]();
+  new Timer.periodic(const Duration(seconds: 3), (Timer t) {
+    if (i < examples.length) {
+      chart?.destroy();
+      examples[i++]();
+    } else {
+      t.cancel();
+    }
+  });
+}
+
+
+/// http://www.chartjs.org/docs/#getting-started-creating-a-chart
+void createChart() {
+  chart = new Chart(ctx, new ChartConfiguration(
+      type: 'line',
       data: new ChartData (
           labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
           datasets: [ new ChartDataSet(
@@ -42,16 +68,18 @@ void main() {
                 'rgba(153, 102, 255, 1)',
                 'rgba(255, 159, 64, 1)'
               ],
-              borderWidth: 1)]
+              borderWidth: 1)
+          ]
       ),
       options: new ChartSettings(
           scales: new Scales(yAxes: [ new Axis(ticks: new Ticks(beginAtZero: true))])
       )
-  ));*/
+  ));
+}
 
-
-  ///http://www.chartjs.org/docs/#chart-configuration-mixed-chart-types
-  /*new Chart(ctx, new ChartConfiguration(
+///http://www.chartjs.org/docs/#chart-configuration-mixed-chart-types
+void mixedChartType() {
+  chart = new Chart(ctx, new ChartConfiguration(
       type: 'bar',
       data: new ChartData(
           labels: ['Item 1', 'Item 2', 'Item 3'],
@@ -68,10 +96,12 @@ void main() {
                 )
           ]
       )
-  ));*/
+  ));
+}
 
-  ///http://www.chartjs.org/docs/#line-chart-dataset-structure
-  /*Chart.Line(ctx, new LineChartConfiguration(
+///http://www.chartjs.org/docs/#line-chart-dataset-structure
+void lineDatasetStructure() {
+  chart = Chart.Line(ctx, new LineChartConfiguration(
       data: new ChartData(
           labels: ['Item 1', 'Item 2', 'Item 3'],
           datasets: [
@@ -101,10 +131,12 @@ void main() {
       ),
       options: new ChartSettings(scales: new Scales(xAxes: [ new Axis(display: false)]))
   )
-  );*/
+  );
+}
 
-  ///http://www.chartjs.org/docs/#line-chart-scatter-line-charts
-/*Chart.Line(ctx, new LineChartConfiguration(
+///http://www.chartjs.org/docs/#line-chart-scatter-line-charts
+void scatterLines() {
+  chart = Chart.Line(ctx, new LineChartConfiguration(
       data: new ChartData(
           datasets: [new LineChartDataSet(
               label: 'Scatter Dataset',
@@ -114,10 +146,12 @@ void main() {
               ])
           ]),
       options: new LineChartSettings(scales: new Scales(xAxes: [new Axis(type: 'linear', position: 'bottom')]))
-  ));*/
+  ));
+}
 
-  ///http://www.chartjs.org/docs/#line-chart-stacked-charts
-/*Chart.Line(ctx, new LineChartConfiguration(
+///http://www.chartjs.org/docs/#line-chart-stacked-charts
+void stackedLines() {
+  chart = Chart.Line(ctx, new LineChartConfiguration(
       data: new ChartData(
           labels: ['Item 1', 'Item 2', 'Item 3'],
           datasets: [
@@ -132,10 +166,12 @@ void main() {
       options: new ChartSettings(
           scales: new Scales(yAxes: [ new Axis(stacked: true)])
       )
-  ));*/
+  ));
+}
 
-  ///http://www.chartjs.org/docs/#bar-chart
-Chart.Bar(ctx, new BarChartConfiguration(
+///http://www.chartjs.org/docs/#bar-chart
+void barChart() {
+  chart = Chart.Bar(ctx, new BarChartConfiguration(
       data: new ChartData(
           labels: ["January", "February", "March", "April", "May", "June", "July"],
           datasets: [

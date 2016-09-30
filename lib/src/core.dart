@@ -518,6 +518,11 @@ class Chart {
   external static ChartDefaults get defaults;
 
   external static set defaults(ChartDefaults v);
+
+  external Chart update();
+  external Chart stop();
+  external Chart clear();
+  external Chart destroy();
 }
 
 @anonymous
