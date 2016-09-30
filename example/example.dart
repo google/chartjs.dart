@@ -1,4 +1,5 @@
 // Copyright (c) 2015, Google Inc. Please see the AUTHORS file for details.
+
 // All rights reserved. Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 
@@ -15,31 +16,118 @@ import 'package:chartjs/chartjs.dart';
 
 void main() {
   Chart.defaults.global.responsive = true;
-
   var ctx = (querySelector('#canvas') as CanvasElement).context2D;
-  var rnd = new math.Random();
-  var months = <String>["January", "February", "March", "April", "May", "June"];
 
-  var data = new LinearChartData(labels: months, datasets: <ChartDataSet>[
-    new ChartDataSet(
-        label: "My First dataset",
-        fillColor: "rgba(220,220,220,0.2)",
-        strokeColor: "rgba(220,220,220,1)",
-        pointColor: "rgba(220,220,220,1)",
-        pointStrokeColor: "#fff",
-        pointHighlightFill: "#fff",
-        pointHighlightStroke: "rgba(220,220,220,1)",
-        data: months.map((_) => rnd.nextInt(100)).toList()),
-    new ChartDataSet(
-        label: "My Second dataset",
-        fillColor: "rgba(151,187,205,0.2)",
-        strokeColor: "rgba(151,187,205,1)",
-        pointColor: "rgba(151,187,205,1)",
-        pointStrokeColor: "#fff",
-        pointHighlightFill: "#fff",
-        pointHighlightStroke: "rgba(151,187,205,1)",
-        data: months.map((_) => rnd.nextInt(100)).toList())
-  ]);
+  /// http://www.chartjs.org/docs/#getting-started-creating-a-chart
+  /*new Chart(ctx, new ChartConfiguration(
+      type: 'bar',
+      data: new ChartData (
+          labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
+          datasets: [ new ChartDataSet(
+              label: '# of Votes',
+              data: [12, 19, 3, 5, 2, 3],
+              backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+              ],
+              borderColor: [
+                'rgba(255,99,132,1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+              ],
+              borderWidth: 1)]
+      ),
+      options: new ChartSettings(
+          scales: new Scales(yAxes: [ new Axis(ticks: new Ticks(beginAtZero: true))])
+      )
+  ));*/
 
-  new Chart(ctx).Line(data, new LineChartOptions(pointDotRadius: 10));
+
+  ///http://www.chartjs.org/docs/#chart-configuration-mixed-chart-types
+/*  new Chart(ctx, new ChartConfiguration(
+      type: 'bar',
+      data: new ChartData(
+          labels: ['Item 1', 'Item 2', 'Item 3'],
+          datasets: [
+            new ChartDataSet(
+                type: 'bar',
+                label: 'Bar Component',
+                data: [10, 20, 30],
+                ),
+            new ChartDataSet(
+                type: 'line',
+                label: 'Line Component',
+                data: [30, 20, 10],
+                )
+          ]
+      )
+  ));*/
+
+  ///http://www.chartjs.org/docs/#line-chart-dataset-structure
+  /* Chart.Line(ctx, new LineChartConfiguration(
+      data: new ChartData(
+          labels: ['Item 1', 'Item 2', 'Item 3'],
+          datasets: [
+            new LineChartDataSet(
+                label: "My First dataset",
+                fill: false,
+                lineTension: 0.1,
+                backgroundColor: ["rgba(75,192,192,0.4)"],
+                borderColor: ["rgba(75,192,192,1)"],
+                borderCapStyle: 'butt',
+                borderDash: [],
+                borderDashOffset: 0.0,
+                borderJoinStyle: 'miter',
+                pointBorderColor: "rgba(75,192,192,1)",
+                pointBackgroundColor: "#fff",
+                pointBorderWidth: [1],
+                pointHoverRadius: [5],
+                pointHoverBackgroundColor: ["rgba(75,192,192,1)"],
+                pointHoverBorderColor: ["rgba(220,220,220,1)"],
+                pointHoverBorderWidth: [2],
+                pointRadius: [1],
+                pointHitRadius: [10],
+                data: [65, 59, 80, 81, 56, 55, 40],
+                spanGaps: false,)
+          ]
+      )
+  ));*/
+
+  ///http://www.chartjs.org/docs/#line-chart-scatter-line-charts
+  /*Chart.Line(ctx, new LineChartConfiguration(
+      data: new ChartData(
+          datasets: [new LineChartDataSet(
+              label: 'Scatter Dataset',
+              data: [ new DataPoint(x: -10, y: 0),
+              new DataPoint(x: 0, y: 10),
+              new DataPoint(x: 10, y: 5)
+              ])
+          ]),
+      options: new LineChartSettings(scales: new Scales(xAxes: [new Axis(type: 'linear', position: 'bottom')]))
+  ));*/
+
+  ///http://www.chartjs.org/docs/#line-chart-stacked-charts
+  Chart.Line(ctx, new LineChartConfiguration(
+      data: new ChartData(
+          labels: ['Item 1', 'Item 2', 'Item 3'],
+          datasets: [
+            new LineChartDataSet(
+                label: 'Line 1',
+                data: [10, 20, 30]),
+            new LineChartDataSet(
+                label: 'Line 2',
+                data: [30, 20, 10])
+          ]
+      ),
+      options: new ChartSettings(
+          scales: new Scales(yAxes: [ new Axis(stacked: true)])
+      )
+  ));
 }
