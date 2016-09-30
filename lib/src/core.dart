@@ -284,6 +284,8 @@ class Ticks {
   external set beginAtZero(bool v);
 }
 
+@anonymous
+@JS()
 class HoverConfiguration {
   external factory HoverConfiguration({String mode});
 
