@@ -11,3 +11,4 @@ library chartjs;
 
 export 'src/core.dart';
 export 'src/line.dart';
+export 'src/bar.dart';

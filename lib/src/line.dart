@@ -7,17 +7,23 @@
 // Definitions by: Steve Fenton <https://github.com/Steve-Fenton>
 // Definitions: https://github.com/borisyankov/DefinitelyTyped
 
+
+/**
+ * http://www.chartjs.org/docs/#line-chart
+ */
 @JS()
 library chartjs.line;
 
 import "package:js/js.dart";
 import 'core.dart';
 
+const String _type = "line";
+
 @anonymous
 @JS()
 class LineChartDataSet extends ChartDataSet {
   external factory LineChartDataSet({
-  String type: "line",
+  String type: _type,
   List<dynamic> data,
   String label,
   String xAxisId,
@@ -32,128 +38,44 @@ class LineChartDataSet extends ChartDataSet {
   List<num> borderDash,
   num borderDashOffset,
   String borderJoinStyle,
-  String pointBorderColor,
-  String pointBackgroundColor,
+  List<String> pointBorderColor,
+  List<String> pointBackgroundColor,
   List<num> pointBorderWidth,
+  List<num> pointRadius,
   List<num> pointHoverRadius,
   List<num> pointHitRadius,
   List<String> pointHoverBackgroundColor,
   List<String> pointHoverBorderColor,
   List<num> pointHoverBorderWidth,
-  List<num> pointRadius,
   List<String> pointStyle,
-  bool showLines,
+  bool showLine,
   bool spanGaps,
   bool steppedLine});
-
-
-  external String get xAxisId;
-
-  external set xAxisId(String v);
-
-  external String get yAxisId;
-
-  external set yAxisId(String v);
-
-  external String get cubicInterpolationMode;
-
-  external set cubicInterpolationMode(String v);
-
-  external bool get steppedLine;
-
-  external set steppedLine(bool v);
-
-  external bool get fill;
-
-  external set fill(bool v);
-
-  external bool get showLines;
-
-  external set showLines(bool v);
-
-  external bool get spanGaps;
-
-  external set spanGaps(bool v);
-
-  external num get lineTension;
-
-  external set lineTension(num v);
-
-  external List<num> get pointHoverBorderWidth;
-
-  external set pointHoverBorderWidth(List<num> v);
-
-  external List<num> get pointBorderWidth;
-
-  external set pointBorderWidth(List<num> v);
-
-  external List<num> get pointHoverRadius;
-
-  external set pointHoverRadius(List<num> v);
-
-  external List<num> get pointRadius;
-
-  external set pointRadius(List<num> v);
-
-  external List<num> get pointHitRadius;
-
-  external set pointHitRadius(List<num> v);
-
-  external num get borderDashOffset;
-
-  external set borderDashOffset(num v);
-
-  external List<num> get borderDash;
-
-  external set borderDash(List<num> v);
-
-  external String get borderCapStyle;
-
-  external set borderCapStyle(String v);
-
-  external String get borderJoinStyle;
-
-  external set borderJoinStyle(String v);
-
-  external List<String> get pointBorderColor;
-
-  external set pointBorderColor(List<String> v);
-
-  external List<String> get pointBackgroundColor;
-
-  external set pointBackgroundColor(List<String> v);
-
-  external List<String> get pointHoverBackgroundColor;
-
-  external set pointHoverBackgroundColor(List<String> v);
-
-  external List<String> get pointHoverBorderColor;
-
-  external set pointHoverBorderColor(List<String> v);
 
 }
 
 @anonymous
 @JS()
 class LineChartSettings extends ChartSettings {
-  external factory LineChartSettings(
-      {Scales scales, bool responsive, HoverConfiguration hover, Function onClick, Function legendCallback, Function onResize,
-      List<String> events, num responsiveAnimationDuration, bool maintainAspectRatio, bool showLines, bool spanGaps});
-
-  external bool get showLines;
-
-  external set showLines(bool v);
-
-  external bool get spanGaps;
-
-  external set spanGaps(bool v);
+  external factory LineChartSettings({
+  Scales scales,
+  bool responsive,
+  num responsiveAnimationDuration,
+  bool maintainAspectRatio,
+  List<String> events,
+  HoverConfiguration hover,
+  Function onClick,
+  Function legendCallback,
+  Function onResize,
+  bool showLines,
+  bool spanGaps});
 }
 
 @anonymous
 @JS()
 class LineChartConfiguration extends ChartConfiguration {
   external factory LineChartConfiguration({
-  String type: "line",
+  String type: _type,
   ChartData data,
   LineChartSettings options
   });
