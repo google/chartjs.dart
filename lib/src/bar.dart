@@ -28,13 +28,13 @@ class BarChartDataSet extends ChartDataSet {
   String xAxisId,
   String yAxisId,
   bool fill,
-  List<String> backgroundColor,
-  List<String> borderColor,
-  num borderWidth,
-  List<String> borderSkipped,
-  List<String> hoverBackgroundColor,
-  List<String> hoverBorderColor,
-  List<num> hoverBorderWidth});
+  /*List<String> || String*/ dynamic backgroundColor,
+  /*List<String> || String*/ dynamic borderColor,
+  /*List<num> || num */ dynamic borderWidth,
+  /*List<String> || String*/ dynamic borderSkipped,
+  /*List<String> || String*/ dynamic hoverBackgroundColor,
+  /*List<String> || String*/ dynamic hoverBorderColor,
+  /*List<num> || num */ dynamic hoverBorderWidth});
 
 }
 
