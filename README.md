@@ -1,5 +1,6 @@
-An example Dart API for [Chart.js](http://www.chartjs.org/)
-using [pkg/js](https://pub.dartlang.org/packages/js).
+A generated Dart API for [Chart.js](http://www.chartjs.org/)
+using [pkg/js](https://pub.dartlang.org/packages/js) and
+[dart_js_facade_gen](https://github.com/dart-lang/js_facade_gen).
 
 This project will be *lightly* maintained by the original author.
 Contributions are welcome.

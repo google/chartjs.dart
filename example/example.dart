@@ -4,42 +4,29 @@
 
 library chartjs.example;
 
-// Based off the Javascript example
-// https://github.com/nnnick/Chart.js/blob/b8691c9581bff0eeecb34f98e678dc045a18f33e/samples/line.html
-// On 2015-10-15
-
 import 'dart:html';
 import 'dart:math' as math;
 
 import 'package:chartjs/chartjs.dart';
 
 void main() {
-  Chart.defaults.global.responsive = true;
-
   var ctx = (querySelector('#canvas') as CanvasElement).context2D;
   var rnd = new math.Random();
   var months = <String>["January", "February", "March", "April", "May", "June"];
 
-  var data = new LinearChartData(labels: months, datasets: <ChartDataSet>[
-    new ChartDataSet(
+  var data = new LinearChartData(labels: months, datasets: <ChartDataSets>[
+    new ChartDataSets(
         label: "My First dataset",
-        fillColor: "rgba(220,220,220,0.2)",
-        strokeColor: "rgba(220,220,220,1)",
-        pointColor: "rgba(220,220,220,1)",
-        pointStrokeColor: "#fff",
-        pointHighlightFill: "#fff",
-        pointHighlightStroke: "rgba(220,220,220,1)",
+        backgroundColor: "rgba(220,220,220,0.2)",
         data: months.map((_) => rnd.nextInt(100)).toList()),
-    new ChartDataSet(
+    new ChartDataSets(
         label: "My Second dataset",
-        fillColor: "rgba(151,187,205,0.2)",
-        strokeColor: "rgba(151,187,205,1)",
-        pointColor: "rgba(151,187,205,1)",
-        pointStrokeColor: "#fff",
-        pointHighlightFill: "#fff",
-        pointHighlightStroke: "rgba(151,187,205,1)",
+        backgroundColor: "rgba(151,187,205,0.2)",
         data: months.map((_) => rnd.nextInt(100)).toList())
   ]);
 
-  new Chart(ctx).Line(data, new LineChartOptions(pointDotRadius: 10));
+  var config = new ChartConfiguration(
+      type: 'line', data: data, options: new ChartOptions(responsive: true));
+
+  new Chart(ctx, config);
 }

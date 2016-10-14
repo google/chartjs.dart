@@ -1,3 +1,8 @@
+## 0.3.0
+
+* Updated to Chart.js 2.3.0
+* Generated using [dart_js_facade_gen](https://github.com/dart-lang/js_facade_gen).
+
 ## 0.2.0+1
 
 * Fixes for Dart 1.16 JS interop requirements.
