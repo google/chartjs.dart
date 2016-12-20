@@ -1,19 +1,18 @@
-// Copyright (c) 2015, Google Inc. Please see the AUTHORS file for details.
+// Copyright (c) 2016, Google Inc. Please see the AUTHORS file for details.
 // All rights reserved. Use of this source code is governed by a BSD-style
 // license that can be found in the LICENSE file.
 @JS()
-library definitelyTyped.chart.js.chart.js;
+library chart.js;
 
 import "package:js/js.dart";
 import "package:func/func.dart";
-import "dart:html" show CanvasRenderingContext2D;
 
 // Type definitions for Chart.js
 // Project: https://github.com/nnnick/Chart.js
 // Definitions by: Alberto Nuti <https://github.com/anuti>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
 // from chart.js/chart.js.d.ts
-// at commit 7708d74aac4adf34411541d31200aa45bcd32c80
+// at commit b4cd313a9a5cfa016fb8cacebb957c6e41473ce1
 
 @JS()
 class ChartType {
@@ -1187,7 +1186,8 @@ class Chart {
   // @Ignore
   Chart.fakeConstructor$();
   external factory Chart(
-      CanvasRenderingContext2D context, ChartConfiguration options);
+      dynamic /*CanvasRenderingContext2D|CanvasElement*/ context,
+      ChartConfiguration options);
   external ChartConfiguration get config;
   external set config(ChartConfiguration v);
   external Func0<dynamic /*{}*/ > get destroy;

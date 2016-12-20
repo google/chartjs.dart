@@ -1,3 +1,7 @@
+## 0.3.1
+
+* Updated to Chart.js 2.4.0
+
 ## 0.3.0
 
 * Updated to Chart.js 2.3.0

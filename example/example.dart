@@ -10,7 +10,6 @@ import 'dart:math' as math;
 import 'package:chartjs/chartjs.dart';
 
 void main() {
-  var ctx = (querySelector('#canvas') as CanvasElement).context2D;
   var rnd = new math.Random();
   var months = <String>["January", "February", "March", "April", "May", "June"];
 
@@ -28,5 +27,5 @@ void main() {
   var config = new ChartConfiguration(
       type: 'line', data: data, options: new ChartOptions(responsive: true));
 
-  new Chart(ctx, config);
+  new Chart(querySelector('#canvas') as CanvasElement, config);
 }
