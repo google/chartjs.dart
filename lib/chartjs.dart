@@ -1110,8 +1110,8 @@ abstract class LogarithmicScale implements ChartScales {
 abstract class TimeScale implements ChartScales {
   external String get format;
   external set format(String v);
-  external String get displayFormats;
-  external set displayFormats(String v);
+  external DisplayFormats get displayFormats;
+  external set displayFormats(DisplayFormats v);
   external bool get isoWeekday;
   external set isoWeekday(bool v);
   external String get max;
@@ -1130,7 +1130,7 @@ abstract class TimeScale implements ChartScales {
   external set unitStepSize(num v);
   external factory TimeScale(
       {String format,
-      String displayFormats,
+      DisplayFormats displayFormats,
       bool isoWeekday,
       String max,
       String min,
@@ -1161,6 +1161,39 @@ abstract class TimeScale implements ChartScales {
       TickOptions ticks,
       List<ChartXAxe> xAxes,
       List<ChartYAxe> yAxes});
+}
+
+@anonymous
+@JS()
+abstract class DisplayFormats {
+  external String get millisecond;
+  external set millisecond(String v);
+  external String get second;
+  external set second(String v);
+  external String get minute;
+  external set minute(String v);
+  external String get hour;
+  external set hour(String v);
+  external String get day;
+  external set day(String v);
+  external String get week;
+  external set week(String v);
+  external String get month;
+  external set month(String v);
+  external String get quarter;
+  external set quarter(String v);
+  external String get year;
+  external set year(String v);
+  external factory DisplayFormats(
+    {String millisecond,
+    String second,
+    String minute,
+    String hour,
+    String day,
+    String week,
+    String month,
+    String quarter,
+    String year});
 }
 
 @anonymous
