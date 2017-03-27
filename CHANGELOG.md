@@ -1,3 +1,7 @@
+## 0.3.2
+
+* Regenerated API from an updated `ts.d`.
+
 ## 0.3.1
 
 * Updated to Chart.js 2.4.0
