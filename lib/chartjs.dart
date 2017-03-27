@@ -7,35 +7,12 @@ library chart.js;
 import "package:js/js.dart";
 import "package:func/func.dart";
 
-// Type definitions for Chart.js
+// Type definitions for Chart.js 2.4.0
 // Project: https://github.com/nnnick/Chart.js
 // Definitions by: Alberto Nuti <https://github.com/anuti>
 // Definitions: https://github.com/DefinitelyTyped/DefinitelyTyped
-// from chart.js/chart.js.d.ts
-// at commit b4cd313a9a5cfa016fb8cacebb957c6e41473ce1
-
-@JS()
-class ChartType {
-  external static num get line;
-  external static num get bar;
-  external static num get radar;
-  external static num get doughnut;
-  external static num get polarArea;
-  external static num get bubble;
-}
-
-@JS()
-class TimeUnit {
-  external static num get millisecond;
-  external static num get second;
-  external static num get minute;
-  external static num get hour;
-  external static num get day;
-  external static num get week;
-  external static num get month;
-  external static num get quarter;
-  external static num get year;
-}
+// from types/chart.js/index.d.ts
+// at commit 354cec620daccfa0ad167ba046651fb5fef69e8a
 
 @anonymous
 @JS()
@@ -118,8 +95,8 @@ abstract class ChartTooltipCallback {
   external Function /*(item?: ChartTooltipItem[], data?: any) => void*/ get footer;
   external set footer(
       Function /*(item?: ChartTooltipItem[], data?: any) => void*/ v);
-  external Function /*(item?: ChartTooltipItem[], data?: any) => void*/ get afterfooter;
-  external set afterfooter(
+  external Function /*(item?: ChartTooltipItem[], data?: any) => void*/ get afterFooter;
+  external set afterFooter(
       Function /*(item?: ChartTooltipItem[], data?: any) => void*/ v);
   external factory ChartTooltipCallback(
       {Function /*(item?: ChartTooltipItem[], data?: any) => void*/ beforeTitle,
@@ -132,7 +109,7 @@ abstract class ChartTooltipCallback {
       Function /*(item?: ChartTooltipItem[], data?: any) => void*/ afterBody,
       Function /*(item?: ChartTooltipItem[], data?: any) => void*/ beforeFooter,
       Function /*(item?: ChartTooltipItem[], data?: any) => void*/ footer,
-      Function /*(item?: ChartTooltipItem[], data?: any) => void*/ afterfooter});
+      Function /*(item?: ChartTooltipItem[], data?: any) => void*/ afterFooter});
 }
 
 @anonymous
@@ -149,24 +126,27 @@ abstract class ChartAnimationParameter {
 @anonymous
 @JS()
 abstract class ChartPoint {
-  external num get x;
-  external set x(num v);
+  external dynamic /*num|String|DateTime*/ get x;
+  external set x(dynamic /*num|String|DateTime*/ v);
   external num get y;
   external set y(num v);
-  external factory ChartPoint({num x, num y});
+  external factory ChartPoint({dynamic /*num|String|DateTime*/ x, num y});
 }
 
 @anonymous
 @JS()
 abstract class ChartConfiguration {
-  external String get type;
-  external set type(String v);
+  external String /*'line'|'bar'|'radar'|'doughnut'|'polarArea'|'bubble'|String*/ get type;
+  external set type(
+      String /*'line'|'bar'|'radar'|'doughnut'|'polarArea'|'bubble'|String*/ v);
   external ChartData get data;
   external set data(ChartData v);
   external ChartOptions get options;
   external set options(ChartOptions v);
   external factory ChartConfiguration(
-      {String type, ChartData data, ChartOptions options});
+      {String /*'line'|'bar'|'radar'|'doughnut'|'polarArea'|'bubble'|String*/ type,
+      ChartData data,
+      ChartOptions options});
 }
 
 @anonymous
@@ -211,6 +191,8 @@ abstract class ChartOptions {
   external set elements(ChartElementsOptions v);
   external ChartScales get scales;
   external set scales(ChartScales v);
+  external num get cutoutPercentage;
+  external set cutoutPercentage(num v);
   external factory ChartOptions(
       {bool responsive,
       num responsiveAnimationDuration,
@@ -223,7 +205,8 @@ abstract class ChartOptions {
       ChartHoverOptions hover,
       ChartAnimationOptions animation,
       ChartElementsOptions elements,
-      ChartScales scales});
+      ChartScales scales,
+      num cutoutPercentage});
 }
 
 @anonymous
@@ -478,20 +461,20 @@ abstract class ChartElementsOptions {
   external set point(ChartPointOptions v);
   external ChartLineOptions get line;
   external set line(ChartLineOptions v);
-  external ChartArcOtpions get arg;
-  external set arg(ChartArcOtpions v);
+  external ChartArcOptions get arc;
+  external set arc(ChartArcOptions v);
   external ChartRectangleOptions get rectangle;
   external set rectangle(ChartRectangleOptions v);
   external factory ChartElementsOptions(
       {ChartPointOptions point,
       ChartLineOptions line,
-      ChartArcOtpions arg,
+      ChartArcOptions arc,
       ChartRectangleOptions rectangle});
 }
 
 @anonymous
 @JS()
-abstract class ChartArcOtpions {
+abstract class ChartArcOptions {
   external dynamic /*String|CanvasGradient|CanvasPattern*/ get backgroundColor;
   external set backgroundColor(
       dynamic /*String|CanvasGradient|CanvasPattern*/ v);
@@ -499,7 +482,7 @@ abstract class ChartArcOtpions {
   external set borderColor(dynamic /*String|CanvasGradient|CanvasPattern*/ v);
   external num get borderWidth;
   external set borderWidth(num v);
-  external factory ChartArcOtpions(
+  external factory ChartArcOptions(
       {dynamic /*String|CanvasGradient|CanvasPattern*/ backgroundColor,
       dynamic /*String|CanvasGradient|CanvasPattern*/ borderColor,
       num borderWidth});
@@ -907,12 +890,13 @@ abstract class ChartDataSets {
 @anonymous
 @JS()
 abstract class ChartScales {
-  external String get type;
-  external set type(String v);
+  external String /*'category'|'linear'|'logarithmic'|'time'|'radialLinear'|String*/ get type;
+  external set type(
+      String /*'category'|'linear'|'logarithmic'|'time'|'radialLinear'|String*/ v);
   external bool get display;
   external set display(bool v);
-  external String get position;
-  external set position(String v);
+  external String /*'left'|'right'|'top'|'bottom'|String*/ get position;
+  external set position(String /*'left'|'right'|'top'|'bottom'|String*/ v);
   external VoidFunc1Opt1<dynamic> get beforeUpdate;
   external set beforeUpdate(VoidFunc1Opt1<dynamic> v);
   external VoidFunc1Opt1<dynamic> get beforeSetDimension;
@@ -952,9 +936,9 @@ abstract class ChartScales {
   external List<ChartYAxe> get yAxes;
   external set yAxes(List<ChartYAxe> v);
   external factory ChartScales(
-      {String type,
+      {String /*'category'|'linear'|'logarithmic'|'time'|'radialLinear'|String*/ type,
       bool display,
-      String position,
+      String /*'left'|'right'|'top'|'bottom'|String*/ position,
       VoidFunc1Opt1<dynamic> beforeUpdate,
       VoidFunc1Opt1<dynamic> beforeSetDimension,
       VoidFunc1Opt1<dynamic> beforeDataLimits,
@@ -978,70 +962,74 @@ abstract class ChartScales {
 
 @anonymous
 @JS()
-abstract class ChartXAxe {
-  external String get type;
-  external set type(String v);
+abstract class CommonAxe {
+  external String /*'category'|'linear'|'logarithmic'|'time'|'radialLinear'|String*/ get type;
+  external set type(
+      String /*'category'|'linear'|'logarithmic'|'time'|'radialLinear'|String*/ v);
   external bool get display;
   external set display(bool v);
   external String get id;
   external set id(String v);
   external bool get stacked;
   external set stacked(bool v);
-  external num get categoryPercentage;
-  external set categoryPercentage(num v);
-  external num get barPercentage;
-  external set barPercentage(num v);
-  external num get barThickness;
-  external set barThickness(num v);
-  external GridLineOptions get gridLines;
-  external set gridLines(GridLineOptions v);
   external String get position;
   external set position(String v);
   external TickOptions get ticks;
   external set ticks(TickOptions v);
-  external TimeScale get time;
-  external set time(TimeScale v);
+  external GridLineOptions get gridLines;
+  external set gridLines(GridLineOptions v);
+  external num get barThickness;
+  external set barThickness(num v);
   external ScaleTitleOptions get scaleLabel;
   external set scaleLabel(ScaleTitleOptions v);
-  external factory ChartXAxe(
-      {String type,
+  external factory CommonAxe(
+      {String /*'category'|'linear'|'logarithmic'|'time'|'radialLinear'|String*/ type,
       bool display,
       String id,
       bool stacked,
-      num categoryPercentage,
-      num barPercentage,
-      num barThickness,
-      GridLineOptions gridLines,
       String position,
       TickOptions ticks,
-      TimeScale time,
+      GridLineOptions gridLines,
+      num barThickness,
       ScaleTitleOptions scaleLabel});
 }
 
 @anonymous
 @JS()
-abstract class ChartYAxe {
-  external String get type;
-  external set type(String v);
-  external bool get display;
-  external set display(bool v);
-  external String get id;
-  external set id(String v);
-  external bool get stacked;
-  external set stacked(bool v);
-  external String get position;
-  external set position(String v);
-  external TickOptions get ticks;
-  external set ticks(TickOptions v);
-  external ScaleTitleOptions get scaleLabel;
-  external set scaleLabel(ScaleTitleOptions v);
-  external factory ChartYAxe(
-      {String type,
+abstract class ChartXAxe implements CommonAxe {
+  external num get categoryPercentage;
+  external set categoryPercentage(num v);
+  external num get barPercentage;
+  external set barPercentage(num v);
+  external TimeScale get time;
+  external set time(TimeScale v);
+  external factory ChartXAxe(
+      {num categoryPercentage,
+      num barPercentage,
+      TimeScale time,
+      String /*'category'|'linear'|'logarithmic'|'time'|'radialLinear'|String*/ type,
       bool display,
       String id,
       bool stacked,
       String position,
       TickOptions ticks,
+      GridLineOptions gridLines,
+      num barThickness,
+      ScaleTitleOptions scaleLabel});
+}
+
+@anonymous
+@JS()
+abstract class ChartYAxe implements CommonAxe {
+  external factory ChartYAxe(
+      {String /*'category'|'linear'|'logarithmic'|'time'|'radialLinear'|String*/ type,
+      bool display,
+      String id,
+      bool stacked,
+      String position,
+      TickOptions ticks,
+      GridLineOptions gridLines,
+      num barThickness,
       ScaleTitleOptions scaleLabel});
 }
 
@@ -1052,9 +1040,9 @@ abstract class LinearScale implements ChartScales {
   external set ticks(LinearTickOptions v);
   external factory LinearScale(
       {LinearTickOptions ticks,
-      String type,
+      String /*'category'|'linear'|'logarithmic'|'time'|'radialLinear'|String*/ type,
       bool display,
-      String position,
+      String /*'left'|'right'|'top'|'bottom'|String*/ position,
       VoidFunc1Opt1<dynamic> beforeUpdate,
       VoidFunc1Opt1<dynamic> beforeSetDimension,
       VoidFunc1Opt1<dynamic> beforeDataLimits,
@@ -1082,9 +1070,9 @@ abstract class LogarithmicScale implements ChartScales {
   external set ticks(LogarithmicTickOptions v);
   external factory LogarithmicScale(
       {LogarithmicTickOptions ticks,
-      String type,
+      String /*'category'|'linear'|'logarithmic'|'time'|'radialLinear'|String*/ type,
       bool display,
-      String position,
+      String /*'left'|'right'|'top'|'bottom'|String*/ position,
       VoidFunc1Opt1<dynamic> beforeUpdate,
       VoidFunc1Opt1<dynamic> beforeSetDimension,
       VoidFunc1Opt1<dynamic> beforeDataLimits,
@@ -1107,11 +1095,42 @@ abstract class LogarithmicScale implements ChartScales {
 
 @anonymous
 @JS()
+abstract class TimeDisplayFormat {
+  external String get millisecond;
+  external set millisecond(String v);
+  external String get second;
+  external set second(String v);
+  external String get minute;
+  external set minute(String v);
+  external String get hour;
+  external set hour(String v);
+  external String get day;
+  external set day(String v);
+  external String get week;
+  external set week(String v);
+  external String get month;
+  external set month(String v);
+  external String get quarter;
+  external set quarter(String v);
+  external String get year;
+  external set year(String v);
+  external factory TimeDisplayFormat(
+      {String millisecond,
+      String second,
+      String minute,
+      String hour,
+      String day,
+      String week,
+      String month,
+      String quarter,
+      String year});
+}
+
+@anonymous
+@JS()
 abstract class TimeScale implements ChartScales {
-  external String get format;
-  external set format(String v);
-  external String get displayFormats;
-  external set displayFormats(String v);
+  external TimeDisplayFormat get displayFormats;
+  external set displayFormats(TimeDisplayFormat v);
   external bool get isoWeekday;
   external set isoWeekday(bool v);
   external String get max;
@@ -1120,28 +1139,33 @@ abstract class TimeScale implements ChartScales {
   external set min(String v);
   external dynamic /*String|Func1<dynamic, dynamic>*/ get parser;
   external set parser(dynamic /*String|Func1<dynamic, dynamic>*/ v);
-  external String get round;
-  external set round(String v);
+  external String /*'millisecond'|'second'|'minute'|'hour'|'day'|'week'|'month'|'quarter'|'year'*/ get round;
+  external set round(
+      String /*'millisecond'|'second'|'minute'|'hour'|'day'|'week'|'month'|'quarter'|'year'*/ v);
   external String get tooltipFormat;
   external set tooltipFormat(String v);
-  external dynamic /*String|enum TimeUnit*/ get unit;
-  external set unit(dynamic /*String|enum TimeUnit*/ v);
+  external String /*'millisecond'|'second'|'minute'|'hour'|'day'|'week'|'month'|'quarter'|'year'*/ get unit;
+  external set unit(
+      String /*'millisecond'|'second'|'minute'|'hour'|'day'|'week'|'month'|'quarter'|'year'*/ v);
   external num get unitStepSize;
   external set unitStepSize(num v);
+  external String /*'millisecond'|'second'|'minute'|'hour'|'day'|'week'|'month'|'quarter'|'year'*/ get minUnit;
+  external set minUnit(
+      String /*'millisecond'|'second'|'minute'|'hour'|'day'|'week'|'month'|'quarter'|'year'*/ v);
   external factory TimeScale(
-      {String format,
-      String displayFormats,
+      {TimeDisplayFormat displayFormats,
       bool isoWeekday,
       String max,
       String min,
       dynamic /*String|Func1<dynamic, dynamic>*/ parser,
-      String round,
+      String /*'millisecond'|'second'|'minute'|'hour'|'day'|'week'|'month'|'quarter'|'year'*/ round,
       String tooltipFormat,
-      dynamic /*String|enum TimeUnit*/ unit,
+      String /*'millisecond'|'second'|'minute'|'hour'|'day'|'week'|'month'|'quarter'|'year'*/ unit,
       num unitStepSize,
-      String type,
+      String /*'millisecond'|'second'|'minute'|'hour'|'day'|'week'|'month'|'quarter'|'year'*/ minUnit,
+      String /*'category'|'linear'|'logarithmic'|'time'|'radialLinear'|String*/ type,
       bool display,
-      String position,
+      String /*'left'|'right'|'top'|'bottom'|String*/ position,
       VoidFunc1Opt1<dynamic> beforeUpdate,
       VoidFunc1Opt1<dynamic> beforeSetDimension,
       VoidFunc1Opt1<dynamic> beforeDataLimits,
@@ -1186,10 +1210,12 @@ class Chart {
   // @Ignore
   Chart.fakeConstructor$();
   external factory Chart(
-      dynamic /*CanvasRenderingContext2D|CanvasElement*/ context,
+      dynamic /*String|JQuery|CanvasRenderingContext2D|CanvasElement|List<String>|List<CanvasRenderingContext2D>|List<CanvasElement>*/ context,
       ChartConfiguration options);
   external ChartConfiguration get config;
   external set config(ChartConfiguration v);
+  external ChartData get data;
+  external set data(ChartData v);
   external Func0<dynamic /*{}*/ > get destroy;
   external set destroy(Func0<dynamic /*{}*/ > v);
   external Function /*(duration?: any, lazy?: any) => {}*/ get update;
@@ -1212,13 +1238,14 @@ class Chart {
   external set getElementsAtEvent(Func1<dynamic, List<dynamic /*{}*/ >> v);
   external Func1<dynamic, List<dynamic /*{}*/ >> get getDatasetAtEvent;
   external set getDatasetAtEvent(Func1<dynamic, List<dynamic /*{}*/ >> v);
-  external dynamic /*{
-        global: ChartOptions;
+  external static dynamic /*{
+        global: Chart.ChartOptions;
     }*/
       get defaults;
-  external set defaults(
-      dynamic /*{
-        global: ChartOptions;
+  external static set defaults(
+      dynamic
+          /*{
+        global: Chart.ChartOptions;
     }*/
-      v);
+          v);
 }
