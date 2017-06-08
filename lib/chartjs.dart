@@ -658,10 +658,10 @@ abstract class TickOptions {
   external set padding(num v);
   external bool get reverse;
   external set reverse(bool v);
-  external dynamic get min;
-  external set min(dynamic v);
-  external dynamic get max;
-  external set max(dynamic v);
+  external num get min;
+  external set min(num v);
+  external num get max;
+  external set max(num v);
   external dynamic /*String|CanvasGradient|CanvasPattern*/ get backdropColor;
   external set backdropColor(dynamic /*String|CanvasGradient|CanvasPattern*/ v);
   external num get backdropPaddingX;
@@ -686,8 +686,8 @@ abstract class TickOptions {
       bool mirror,
       num padding,
       bool reverse,
-      dynamic min,
-      dynamic max,
+      num min,
+      num max,
       dynamic /*String|CanvasGradient|CanvasPattern*/ backdropColor,
       num backdropPaddingX,
       num backdropPaddingY,
