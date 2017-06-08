@@ -1037,7 +1037,7 @@ abstract class ChartYAxe implements CommonAxe {
 @JS()
 abstract class LinearScale implements ChartScales {
   external LinearTickOptions get ticks;
-  external set ticks(LinearTickOptions v);
+  external set ticks(covariant LinearTickOptions v);
   external factory LinearScale(
       {LinearTickOptions ticks,
       String /*'category'|'linear'|'logarithmic'|'time'|'radialLinear'|String*/ type,
@@ -1067,7 +1067,7 @@ abstract class LinearScale implements ChartScales {
 @JS()
 abstract class LogarithmicScale implements ChartScales {
   external LogarithmicTickOptions get ticks;
-  external set ticks(LogarithmicTickOptions v);
+  external set ticks(covariant LogarithmicTickOptions v);
   external factory LogarithmicScale(
       {LogarithmicTickOptions ticks,
       String /*'category'|'linear'|'logarithmic'|'time'|'radialLinear'|String*/ type,
