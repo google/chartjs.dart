@@ -1228,8 +1228,8 @@ class Chart {
   external set resize(Func0<dynamic /*{}*/ > v);
   external Func0<dynamic /*{}*/ > get clear;
   external set clear(Func0<dynamic /*{}*/ > v);
-  external Func0<String> get toBase64;
-  external set toBase64(Func0<String> v);
+  external Func0<String> get toBase64Image;
+  external set toBase64Image(Func0<String> v);
   external Func0<dynamic /*{}*/ > get generateLegend;
   external set generateLegend(Func0<dynamic /*{}*/ > v);
   external Func1<dynamic, dynamic /*{}*/ > get getElementAtEvent;
