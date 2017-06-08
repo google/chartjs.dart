@@ -1,3 +1,9 @@
+## 0.4.0
+
+* Renamed `Chart` `toBase64` -> `toBase64Image`.
+
+* Fixed strong-mode issues.
+
 ## 0.3.2
 
 * Regenerated API from an updated `ts.d`.
