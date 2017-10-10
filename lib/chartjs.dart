@@ -4,8 +4,8 @@
 @JS()
 library chart.js;
 
-import "package:js/js.dart";
-import "package:func/func.dart";
+import 'package:js/js.dart';
+import 'package:func/func.dart';
 
 // Type definitions for Chart.js 2.4.0
 // Project: https://github.com/nnnick/Chart.js

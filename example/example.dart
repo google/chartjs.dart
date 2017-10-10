@@ -9,16 +9,16 @@ import 'package:chartjs/chartjs.dart';
 
 void main() {
   var rnd = new math.Random();
-  var months = <String>["January", "February", "March", "April", "May", "June"];
+  var months = <String>['January', 'February', 'March', 'April', 'May', 'June'];
 
   var data = new LinearChartData(labels: months, datasets: <ChartDataSets>[
     new ChartDataSets(
-        label: "My First dataset",
-        backgroundColor: "rgba(220,220,220,0.2)",
+        label: 'My First dataset',
+        backgroundColor: 'rgba(220,220,220,0.2)',
         data: months.map((_) => rnd.nextInt(100)).toList()),
     new ChartDataSets(
-        label: "My Second dataset",
-        backgroundColor: "rgba(151,187,205,0.2)",
+        label: 'My Second dataset',
+        backgroundColor: 'rgba(151,187,205,0.2)',
         data: months.map((_) => rnd.nextInt(100)).toList())
   ]);
 
