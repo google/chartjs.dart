@@ -1,3 +1,7 @@
+## 0.4.0+1
+
+* Allow the latest release of `package:func`.
+
 ## 0.4.0
 
 * Renamed `Chart` `toBase64` -> `toBase64Image`.
