@@ -1,3 +1,7 @@
+## 0.5.0
+
+* Regenerated API for Chart.js 2.6.0
+
 ## 0.4.0+1
 
 * Allow the latest release of `package:func`.

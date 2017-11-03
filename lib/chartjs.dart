@@ -1,17 +1,14 @@
-@JS("Chart")
-library definitelyTyped.types.chart.js;
+// Copyright (c) 2016, Google Inc. Please see the AUTHORS file for details.
+// All rights reserved. Use of this source code is governed by a BSD-style
+// license that can be found in the LICENSE file.
 
-import "package:js/js.dart";
-import "dart:html"
-    show
-        CanvasRenderingContext2D,
-        CanvasElement,
-        Event,
-        MouseEvent,
-        CanvasGradient,
-        CanvasPattern,
-        ImageElement;
-import "package:func/func.dart";
+@JS('Chart')
+library chart.js;
+
+import 'dart:html'
+    show CanvasRenderingContext2D, CanvasElement, Event, MouseEvent;
+import 'package:func/func.dart';
+import 'package:js/js.dart';
 
 /// Type definitions for Chart.js 2.6
 /// Project: https://github.com/nnnick/Chart.js
@@ -28,15 +25,15 @@ import "package:func/func.dart";
 class Chart {
   // @Ignore
   Chart.fakeConstructor$();
-  external static dynamic get Chart;
-  external static set Chart(dynamic v);
+  //external static dynamic get Chart;
+  //external static set Chart(dynamic v);
   external factory Chart(
       dynamic /*String|CanvasRenderingContext2D|CanvasElement|ArrayLike<CanvasRenderingContext2D|CanvasElement>*/ context,
       ChartConfiguration options);
   external ChartConfiguration get config;
   external set config(ChartConfiguration v);
-  external ChartData get data;
-  external set data(ChartData v);
+  external LinearChartData get data;
+  external set data(LinearChartData v);
   external Func0<dynamic /*{}*/ > get destroy;
   external set destroy(Func0<dynamic /*{}*/ > v);
   external Function /*(duration?: any, lazy?: any) => {}*/ get update;
@@ -74,10 +71,11 @@ class Chart {
     }*/
       get defaults;
   external static set defaults(
-      dynamic /*{
+      dynamic
+          /*{
         global: Chart.ChartOptions & Chart.ChartFontOptions;
     }*/
-      v);
+          v);
 }
 
 @JS()
@@ -256,24 +254,24 @@ abstract class ChartConfiguration {
   external String /*'line'|'bar'|'radar'|'doughnut'|'polarArea'|'bubble'|String*/ get type;
   external set type(
       String /*'line'|'bar'|'radar'|'doughnut'|'polarArea'|'bubble'|String*/ v);
-  external ChartData get data;
-  external set data(ChartData v);
+  external LinearChartData get data;
+  external set data(LinearChartData v);
   external ChartOptions get options;
   external set options(ChartOptions v);
   external factory ChartConfiguration(
       {String /*'line'|'bar'|'radar'|'doughnut'|'polarArea'|'bubble'|String*/ type,
-      ChartData data,
+      LinearChartData data,
       ChartOptions options});
 }
 
 @anonymous
 @JS()
-abstract class ChartData {
+abstract class LinearChartData {
   external List<dynamic /*String|List<String>*/ > get labels;
   external set labels(List<dynamic /*String|List<String>*/ > v);
   external List<ChartDataSets> get datasets;
   external set datasets(List<ChartDataSets> v);
-  external factory ChartData(
+  external factory LinearChartData(
       {List<dynamic /*String|List<String>*/ > labels,
       List<ChartDataSets> datasets});
 }
@@ -281,6 +279,21 @@ abstract class ChartData {
 @anonymous
 @JS()
 abstract class ChartOptions {
+  external factory ChartOptions(
+      {bool responsive,
+      num responsiveAnimationDuration,
+      bool maintainAspectRatio,
+      List<String> events,
+      Func1Opt1<dynamic, dynamic> onClick,
+      ChartTitleOptions title,
+      ChartLegendOptions legend,
+      ChartTooltipOptions tooltips,
+      ChartHoverOptions hover,
+      ChartAnimationOptions animation,
+      ChartElementsOptions elements,
+      ChartScales scales,
+      num cutoutPercentage});
+
   external bool get responsive;
   external set responsive(bool v);
   external num get responsiveAnimationDuration;
@@ -752,7 +765,7 @@ abstract class ScaleTitleOptions {
 
 @anonymous
 @JS()
-abstract class TickOptions {
+abstract class TickOptions<T> {
   external bool get autoSkip;
   external set autoSkip(bool v);
   external bool get autoSkipPadding;
@@ -783,9 +796,9 @@ abstract class TickOptions {
   external bool get reverse;
   external set reverse(bool v);
   external dynamic get min;
-  external set min(dynamic v);
+  external set min(T v);
   external dynamic get max;
-  external set max(dynamic v);
+  external set max(T v);
   external dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ get backdropColor;
   external set backdropColor(
       dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
@@ -832,7 +845,7 @@ abstract class PointLabelOptions {
 
 @anonymous
 @JS()
-abstract class LinearTickOptions implements TickOptions {
+abstract class LinearTickOptions implements TickOptions<num> {
   external bool get beginAtZero;
   external set beginAtZero(bool v);
   external num get min;
@@ -851,7 +864,7 @@ abstract class LinearTickOptions implements TickOptions {
 
 @anonymous
 @JS()
-abstract class LogarithmicTickOptions implements TickOptions {
+abstract class LogarithmicTickOptions implements TickOptions<num> {
   external num get min;
   external set min(num v);
   external num get max;
@@ -979,7 +992,7 @@ abstract class ChartDataSets {
 
 @anonymous
 @JS()
-abstract class ChartScales {
+abstract class ChartScales<T extends TickOptions> {
   external String /*'category'|'linear'|'logarithmic'|'time'|'radialLinear'|String*/ get type;
   external set type(
       String /*'category'|'linear'|'logarithmic'|'time'|'radialLinear'|String*/ v);
@@ -991,8 +1004,8 @@ abstract class ChartScales {
   external set gridLines(GridLineOptions v);
   external ScaleTitleOptions get scaleLabel;
   external set scaleLabel(ScaleTitleOptions v);
-  external TickOptions get ticks;
-  external set ticks(TickOptions v);
+  external T get ticks;
+  external set ticks(T v);
   external List<ChartXAxe> get xAxes;
   external set xAxes(List<ChartXAxe> v);
   external List<ChartYAxe> get yAxes;
@@ -1064,7 +1077,7 @@ abstract class ChartYAxe implements CommonAxe {}
 
 @anonymous
 @JS()
-abstract class LinearScale implements ChartScales {
+abstract class LinearScale implements ChartScales<LinearTickOptions> {
   external LinearTickOptions get ticks;
   external set ticks(LinearTickOptions v);
   external factory LinearScale(
@@ -1080,7 +1093,7 @@ abstract class LinearScale implements ChartScales {
 
 @anonymous
 @JS()
-abstract class LogarithmicScale implements ChartScales {
+abstract class LogarithmicScale implements ChartScales<LogarithmicTickOptions> {
   external LogarithmicTickOptions get ticks;
   external set ticks(LogarithmicTickOptions v);
   external factory LogarithmicScale(
