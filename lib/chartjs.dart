@@ -813,6 +813,7 @@ abstract class ChartDataSets {
   external set backgroundColor(
       dynamic /*String|CanvasGradient|CanvasPattern*/ v);
   external num get borderWidth;
+  external set type(String type);
   external set borderWidth(num v);
   external dynamic /*String|CanvasGradient|CanvasPattern*/ get borderColor;
   external set borderColor(dynamic /*String|CanvasGradient|CanvasPattern*/ v);
