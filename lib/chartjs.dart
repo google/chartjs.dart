@@ -864,6 +864,7 @@ abstract class ChartDataSets {
   external set yAxisID(String v);
   external factory ChartDataSets(
       {dynamic /*String|CanvasGradient|CanvasPattern*/ backgroundColor,
+      dynamic type,
       num borderWidth,
       dynamic /*String|CanvasGradient|CanvasPattern*/ borderColor,
       String borderCapStyle,
