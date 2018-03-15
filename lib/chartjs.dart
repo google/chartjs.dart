@@ -813,6 +813,7 @@ abstract class ChartDataSets {
   external set backgroundColor(
       dynamic /*String|CanvasGradient|CanvasPattern*/ v);
   external num get borderWidth;
+  external set type(String type);
   external set borderWidth(num v);
   external dynamic /*String|CanvasGradient|CanvasPattern*/ get borderColor;
   external set borderColor(dynamic /*String|CanvasGradient|CanvasPattern*/ v);
@@ -863,6 +864,7 @@ abstract class ChartDataSets {
   external set yAxisID(String v);
   external factory ChartDataSets(
       {dynamic /*String|CanvasGradient|CanvasPattern*/ backgroundColor,
+      dynamic type,
       num borderWidth,
       dynamic /*String|CanvasGradient|CanvasPattern*/ borderColor,
       String borderCapStyle,
@@ -1212,6 +1214,7 @@ class Chart {
   external factory Chart(
       dynamic /*String|JQuery|CanvasRenderingContext2D|CanvasElement|List<String>|List<CanvasRenderingContext2D>|List<CanvasElement>*/ context,
       ChartConfiguration options);
+  external dynamic getDatasetMeta(int index);
   external ChartConfiguration get config;
   external set config(ChartConfiguration v);
   external ChartData get data;
