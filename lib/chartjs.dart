@@ -1214,6 +1214,7 @@ class Chart {
   external factory Chart(
       dynamic /*String|JQuery|CanvasRenderingContext2D|CanvasElement|List<String>|List<CanvasRenderingContext2D>|List<CanvasElement>*/ context,
       ChartConfiguration options);
+  external dynamic getDatasetMeta(int index);
   external ChartConfiguration get config;
   external set config(ChartConfiguration v);
   external ChartData get data;
