@@ -2,6 +2,8 @@
 
 * Regenerated API for Chart.js 2.6.0
 
+* Support Dart 2.
+
 ## 0.4.0+1
 
 * Allow the latest release of `package:func`.

@@ -7,8 +7,9 @@ library chart.js;
 
 import 'dart:html'
     show CanvasRenderingContext2D, CanvasElement, Event, MouseEvent;
-import 'package:func/func.dart';
 import 'package:js/js.dart';
+
+import 'src/func.dart';
 
 /// Type definitions for Chart.js 2.6
 /// Project: https://github.com/nnnick/Chart.js
