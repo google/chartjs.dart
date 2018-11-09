@@ -1069,12 +1069,41 @@ abstract class ChartXAxe implements CommonAxe {
   external set barPercentage(num v);
   external TimeScale get time;
   external set time(TimeScale v);
+  external factory ChartXAxe({
+    String /*'category'|'linear'|'logarithmic'|'time'|'radialLinear'|String*/ type,
+    bool display,
+    String id,
+    bool stacked,
+    String position,
+    TickOptions ticks,
+    GridLineOptions gridLines,
+    num barThickness,
+    ScaleTitleOptions scaleLabel,
+    num categoryPercentage,
+    num barPercentage,
+    TimeScale time
+  });
 }
 
 /// tslint:disable-next-line no-empty-interface
 @anonymous
 @JS()
-abstract class ChartYAxe implements CommonAxe {}
+abstract class ChartYAxe implements CommonAxe {
+  external factory ChartYAxe({
+    String /*'category'|'linear'|'logarithmic'|'time'|'radialLinear'|String*/ type,
+    bool display,
+    String id,
+    bool stacked,
+    String position,
+    TickOptions ticks,
+    GridLineOptions gridLines,
+    num barThickness,
+    ScaleTitleOptions scaleLabel,
+    num categoryPercentage,
+    num barPercentage,
+    TimeScale time
+  });
+}
 
 @anonymous
 @JS()
