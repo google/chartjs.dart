@@ -401,6 +401,15 @@ abstract class ChartLegendOptions {
   external set labels(ChartLegendLabelOptions v);
   external bool get reverse;
   external set reverse(bool v);
+  external factory ChartLegendOptions({
+      bool display,
+      String /*'left'|'right'|'top'|'bottom'*/ position,
+      bool fullWidth,
+      void onClick(MouseEvent event, ChartLegendItem legendItem),
+      void onHover(MouseEvent event, ChartLegendItem legendItem),
+      ChartLegendLabelOptions labels,
+      bool reverse
+  });
 }
 
 @anonymous
@@ -420,6 +429,15 @@ abstract class ChartLegendLabelOptions {
   external num get padding;
   external set padding(num v);
   external dynamic generateLabels(dynamic chart);
+  external factory ChartLegendLabelOptions({
+      num boxWidth,
+      num fontSize,
+      String fontStyle,
+      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ fontColor,
+      String fontFamily,
+      num padding,
+      dynamic generateLabels(dynamic chart)
+  }); 
 }
 
 @anonymous
@@ -509,6 +527,12 @@ abstract class ChartHoverOptions {
   external bool get intersect;
   external set intersect(bool v);
   external void onHover(dynamic active);
+  external factory ChartHoverOptions({
+      String mode,
+      num animationDuration,
+      bool intersect,
+      void onHover(dynamic active)
+  }); 
 }
 
 @anonymous
