@@ -29,7 +29,6 @@ linter:
     - prefer_single_quotes
     - slash_for_doc_comments
     - test_types_in_equals
-    - test_types_in_equals
     - throw_in_finally
     - type_init_formals
     - unrelated_type_equality_checks

@@ -1,6 +1,7 @@
 ## 0.5.1
 
-* Add missing constructors of ChartLegendOptions, ChartLegendLabelOptions, and ChartHoverOptions for ChartOptions.
+* Add missing constructors of `ChartLegendOptions`, `ChartLegendLabelOptions`,
+  and `ChartHoverOptions` for `ChartOptions`.
 
 ## 0.5.0
 
