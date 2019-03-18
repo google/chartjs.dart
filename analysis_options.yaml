@@ -33,3 +33,4 @@ linter:
     - type_init_formals
     - unrelated_type_equality_checks
     - valid_regexps
+    - unnecessary_new
