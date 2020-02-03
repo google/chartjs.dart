@@ -405,8 +405,8 @@ abstract class ChartLegendOptions {
       {bool display,
       String /*'left'|'right'|'top'|'bottom'*/ position,
       bool fullWidth,
-      void onClick(MouseEvent event, ChartLegendItem legendItem),
-      void onHover(MouseEvent event, ChartLegendItem legendItem),
+      void Function(MouseEvent event, ChartLegendItem legendItem) onClick,
+      void Function(MouseEvent event, ChartLegendItem legendItem) onHover,
       ChartLegendLabelOptions labels,
       bool reverse});
 }
@@ -435,7 +435,7 @@ abstract class ChartLegendLabelOptions {
       dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ fontColor,
       String fontFamily,
       num padding,
-      dynamic generateLabels(dynamic chart)});
+      dynamic Function(dynamic chart) generateLabels});
 }
 
 @anonymous
@@ -529,7 +529,7 @@ abstract class ChartHoverOptions {
       {String mode,
       num animationDuration,
       bool intersect,
-      void onHover(dynamic active)});
+      void Function(dynamic active) onHover});
 }
 
 @anonymous
@@ -870,11 +870,17 @@ abstract class PointLabelOptions {
 abstract class LinearTickOptions implements TickOptions<num> {
   external bool get beginAtZero;
   external set beginAtZero(bool v);
+  @override
   external num get min;
+  @override
   external set min(num v);
+  @override
   external num get max;
+  @override
   external set max(num v);
+  @override
   external num get maxTicksLimit;
+  @override
   external set maxTicksLimit(num v);
   external num get stepSize;
   external set stepSize(num v);
@@ -887,9 +893,13 @@ abstract class LinearTickOptions implements TickOptions<num> {
 @anonymous
 @JS()
 abstract class LogarithmicTickOptions implements TickOptions<num> {
+  @override
   external num get min;
+  @override
   external set min(num v);
+  @override
   external num get max;
+  @override
   external set max(num v);
 }
 
@@ -1127,7 +1137,9 @@ abstract class ChartYAxe implements CommonAxe {
 @anonymous
 @JS()
 abstract class LinearScale implements ChartScales<LinearTickOptions> {
+  @override
   external LinearTickOptions get ticks;
+  @override
   external set ticks(LinearTickOptions v);
   external factory LinearScale(
       {LinearTickOptions ticks,
@@ -1143,7 +1155,9 @@ abstract class LinearScale implements ChartScales<LinearTickOptions> {
 @anonymous
 @JS()
 abstract class LogarithmicScale implements ChartScales<LogarithmicTickOptions> {
+  @override
   external LogarithmicTickOptions get ticks;
+  @override
   external set ticks(LogarithmicTickOptions v);
   external factory LogarithmicScale(
       {LogarithmicTickOptions ticks,
