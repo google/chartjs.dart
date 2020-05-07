@@ -25,7 +25,7 @@ import 'src/func.dart';
 @JS()
 class Chart {
   // @Ignore
-  Chart.fakeConstructor$();
+  //Chart.fakeConstructor$();
   //external static dynamic get Chart;
   //external static set Chart(dynamic v);
   external factory Chart(
@@ -109,7 +109,7 @@ class ChartScale {
 @JS()
 class PluginServiceStatic {
   // @Ignore
-  PluginServiceStatic.fakeConstructor$();
+  //PluginServiceStatic.fakeConstructor$();
   external void register([PluginServiceRegistrationOptions plugin]);
 }
 
