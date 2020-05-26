@@ -1,3 +1,7 @@
+## 0.5.2
+
+* Remove `fackeConstructor$` from two classes.
+
 ## 0.5.1
 
 * Add missing constructors of `ChartLegendOptions`, `ChartLegendLabelOptions`,
