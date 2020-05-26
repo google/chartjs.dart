@@ -24,10 +24,6 @@ import 'src/func.dart';
 /// TypeScript Version: 2.3
 @JS()
 class Chart {
-  // @Ignore
-  Chart.fakeConstructor$();
-  //external static dynamic get Chart;
-  //external static set Chart(dynamic v);
   external factory Chart(
       dynamic /*String|CanvasRenderingContext2D|CanvasElement|ArrayLike<CanvasRenderingContext2D|CanvasElement>*/ context,
       ChartConfiguration options);
@@ -81,8 +77,6 @@ class Chart {
 
 @JS()
 class PluginServiceStatic {
-  // @Ignore
-  PluginServiceStatic.fakeConstructor$();
   external void register([PluginServiceRegistrationOptions plugin]);
 }
 
@@ -441,42 +435,41 @@ abstract class ChartLegendLabelOptions {
 @anonymous
 @JS()
 abstract class ChartTooltipOptions {
-    external factory ChartTooltipOptions({
-    bool enabled,
-    String mode,
-    bool intersect,
-    dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ backdropColor,
-    String titleFontFamily,
-    String titleFontStyle,
-    num titleFontSize,
-    dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ titleFontColor,
-    num titleSpacing,
-    num titleMarginBottom,
-    String bodyFontFamily,
-    num bodyFontSize,
-    String bodyFontStyle,
-    dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ bodyFontColor,
-    num bodySpacing,
-    String footerFontFamily,
-    num footerFontSize,
-    String footerFontStyle,
-    dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ footerFontColor,
-    num footerSpacing,
-    num footerMarginTop,
-    num xPadding,
-    num yPadding,
-    num caretSize,
-    num cornerRadius,
-    String multiKeyBackground,
-    ChartTooltipCallback callbacks,
-    bool filter(ChartTooltipItem item),
-    num itemSort(ChartTooltipItem itemA, ChartTooltipItem itemB),
-    String /*'average'|'nearest'*/ position,
-    num caretPadding,
-    bool displayColors,
-    dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ borderColor,
-    num borderWidth
-  });
+  external factory ChartTooltipOptions(
+      {bool enabled,
+      String mode,
+      bool intersect,
+      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ backdropColor,
+      String titleFontFamily,
+      String titleFontStyle,
+      num titleFontSize,
+      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ titleFontColor,
+      num titleSpacing,
+      num titleMarginBottom,
+      String bodyFontFamily,
+      num bodyFontSize,
+      String bodyFontStyle,
+      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ bodyFontColor,
+      num bodySpacing,
+      String footerFontFamily,
+      num footerFontSize,
+      String footerFontStyle,
+      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ footerFontColor,
+      num footerSpacing,
+      num footerMarginTop,
+      num xPadding,
+      num yPadding,
+      num caretSize,
+      num cornerRadius,
+      String multiKeyBackground,
+      ChartTooltipCallback callbacks,
+      bool filter(ChartTooltipItem item),
+      num itemSort(ChartTooltipItem itemA, ChartTooltipItem itemB),
+      String /*'average'|'nearest'*/ position,
+      num caretPadding,
+      bool displayColors,
+      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ borderColor,
+      num borderWidth});
   external bool get enabled;
   external set enabled(bool v);
   external void custom(dynamic a);
