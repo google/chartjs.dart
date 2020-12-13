@@ -940,6 +940,11 @@ abstract class LogarithmicTickOptions implements TickOptions<num> {
   external num get max;
   @override
   external set max(num v);
+
+  external factory LogarithmicTickOptions(
+    num min,
+    num max
+  );
 }
 
 /*type ChartColor = string | CanvasGradient | CanvasPattern | string[];*/
