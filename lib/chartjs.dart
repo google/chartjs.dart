@@ -917,6 +917,16 @@ abstract class LinearTickOptions implements TickOptions<num> {
   external set suggestedMin(num v);
   external num get suggestedMax;
   external set suggestedMax(num v);
+
+  external factory LinearTickOptions(
+    bool beginAtZero,
+    num min,
+    num max,
+    num maxTicksLimit,
+    num stepSize,
+    num suggestedMin,
+    num suggestedMax
+  );
 }
 
 @anonymous
