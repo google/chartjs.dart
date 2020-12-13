@@ -918,7 +918,7 @@ abstract class LinearTickOptions implements TickOptions<num> {
   external num get suggestedMax;
   external set suggestedMax(num v);
 
-  external factory LinearTickOptions(
+  external factory LinearTickOptions({
     bool beginAtZero,
     num min,
     num max,
@@ -926,7 +926,7 @@ abstract class LinearTickOptions implements TickOptions<num> {
     num stepSize,
     num suggestedMin,
     num suggestedMax
-  );
+  });
 }
 
 @anonymous
@@ -941,10 +941,10 @@ abstract class LogarithmicTickOptions implements TickOptions<num> {
   @override
   external set max(num v);
 
-  external factory LogarithmicTickOptions(
+  external factory LogarithmicTickOptions({
     num min,
     num max
-  );
+  });
 }
 
 /*type ChartColor = string | CanvasGradient | CanvasPattern | string[];*/
