@@ -220,6 +220,20 @@ abstract class ChartTooltipCallback {
   external void beforeFooter([List<ChartTooltipItem> item, dynamic data]);
   external void footer([List<ChartTooltipItem> item, dynamic data]);
   external void afterFooter([List<ChartTooltipItem> item, dynamic data]);
+
+  external factory ChartTooltipCallback({
+    void Function([ChartTooltipItem tooltipItem, dynamic data]) beforeTitle,
+    void Function([ChartTooltipItem tooltipItem, dynamic data]) title,
+    void Function([ChartTooltipItem tooltipItem, dynamic data]) afterTitle,
+    void Function([ChartTooltipItem tooltipItem, dynamic data]) beforeBody,
+    void Function([ChartTooltipItem tooltipItem, dynamic data]) beforeLabel,
+    void Function([ChartTooltipItem tooltipItem, dynamic data]) label,
+    void Function([ChartTooltipItem tooltipItem, dynamic data]) afterLabel,
+    void Function([ChartTooltipItem tooltipItem, dynamic data]) afterBody,
+    void Function([ChartTooltipItem tooltipItem, dynamic data]) beforeFooter,
+    void Function([ChartTooltipItem tooltipItem, dynamic data]) footer,
+    void Function([ChartTooltipItem tooltipItem, dynamic data]) afterFooter
+  });
 }
 
 @anonymous
