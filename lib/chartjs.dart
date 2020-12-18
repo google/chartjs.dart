@@ -875,6 +875,30 @@ abstract class TickOptions<T> {
   external set maxTicksLimit(num v);
   external bool get showLabelBackdrop;
   external set showLabelBackdrop(bool v);
+
+  external factory TickOptions({
+    bool autoSkip,
+    bool autoSkipPadding,
+    dynamic Function(dynamic value, dynamic index, dynamic values) callback,
+    bool display,
+    dynamic fontColor,
+    String fontFamily,
+    num fontSize,
+    String fontStyle,
+    num labelOffset,
+    num maxRotation,
+    num minRotation,
+    bool mirror,
+    num padding,
+    bool reverse,
+    dynamic min,
+    dynamic max,
+    dynamic backdropColor,
+    num backdropPaddingX,
+    num backdropPaddingY,
+    num maxTicksLimit,
+    bool showLabelBackdrop
+  });
 }
 
 @anonymous
