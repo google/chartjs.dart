@@ -949,6 +949,10 @@ abstract class LinearTickOptions implements TickOptions<num> {
   external num get maxTicksLimit;
   @override
   external set maxTicksLimit(num v);
+  @override
+  external dynamic /*String|num*/ callback(
+      dynamic value, dynamic index, dynamic values);
+
   external num get stepSize;
   external set stepSize(num v);
   external num get suggestedMin;
@@ -963,7 +967,8 @@ abstract class LinearTickOptions implements TickOptions<num> {
     num maxTicksLimit,
     num stepSize,
     num suggestedMin,
-    num suggestedMax
+    num suggestedMax,
+    dynamic Function(dynamic value, dynamic index, dynamic values) callback
   });
 }
 
