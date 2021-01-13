@@ -220,6 +220,20 @@ abstract class ChartTooltipCallback {
   external void beforeFooter([List<ChartTooltipItem> item, dynamic data]);
   external void footer([List<ChartTooltipItem> item, dynamic data]);
   external void afterFooter([List<ChartTooltipItem> item, dynamic data]);
+
+  external factory ChartTooltipCallback({
+    void Function([ChartTooltipItem tooltipItem, dynamic data]) beforeTitle,
+    void Function([ChartTooltipItem tooltipItem, dynamic data]) title,
+    void Function([ChartTooltipItem tooltipItem, dynamic data]) afterTitle,
+    void Function([ChartTooltipItem tooltipItem, dynamic data]) beforeBody,
+    void Function([ChartTooltipItem tooltipItem, dynamic data]) beforeLabel,
+    void Function([ChartTooltipItem tooltipItem, dynamic data]) label,
+    void Function([ChartTooltipItem tooltipItem, dynamic data]) afterLabel,
+    void Function([ChartTooltipItem tooltipItem, dynamic data]) afterBody,
+    void Function([ChartTooltipItem tooltipItem, dynamic data]) beforeFooter,
+    void Function([ChartTooltipItem tooltipItem, dynamic data]) footer,
+    void Function([ChartTooltipItem tooltipItem, dynamic data]) afterFooter
+  });
 }
 
 @anonymous
@@ -861,6 +875,30 @@ abstract class TickOptions<T> {
   external set maxTicksLimit(num v);
   external bool get showLabelBackdrop;
   external set showLabelBackdrop(bool v);
+
+  external factory TickOptions({
+    bool autoSkip,
+    bool autoSkipPadding,
+    dynamic Function(dynamic value, dynamic index, dynamic values) callback,
+    bool display,
+    dynamic fontColor,
+    String fontFamily,
+    num fontSize,
+    String fontStyle,
+    num labelOffset,
+    num maxRotation,
+    num minRotation,
+    bool mirror,
+    num padding,
+    bool reverse,
+    dynamic min,
+    dynamic max,
+    dynamic backdropColor,
+    num backdropPaddingX,
+    num backdropPaddingY,
+    num maxTicksLimit,
+    bool showLabelBackdrop
+  });
 }
 
 @anonymous
@@ -911,12 +949,27 @@ abstract class LinearTickOptions implements TickOptions<num> {
   external num get maxTicksLimit;
   @override
   external set maxTicksLimit(num v);
+  @override
+  external dynamic /*String|num*/ callback(
+      dynamic value, dynamic index, dynamic values);
+
   external num get stepSize;
   external set stepSize(num v);
   external num get suggestedMin;
   external set suggestedMin(num v);
   external num get suggestedMax;
   external set suggestedMax(num v);
+
+  external factory LinearTickOptions({
+    bool beginAtZero,
+    num min,
+    num max,
+    num maxTicksLimit,
+    num stepSize,
+    num suggestedMin,
+    num suggestedMax,
+    dynamic Function(dynamic value, dynamic index, dynamic values) callback
+  });
 }
 
 @anonymous
@@ -930,6 +983,11 @@ abstract class LogarithmicTickOptions implements TickOptions<num> {
   external num get max;
   @override
   external set max(num v);
+
+  external factory LogarithmicTickOptions({
+    num min,
+    num max
+  });
 }
 
 /*type ChartColor = string | CanvasGradient | CanvasPattern | string[];*/
