@@ -7,7 +7,9 @@ library chart.js;
 
 import 'dart:html'
     show CanvasRenderingContext2D, CanvasElement, Event, MouseEvent;
+
 import 'package:js/js.dart';
+import 'package:js/js_util.dart';
 
 import 'src/func.dart';
 
@@ -286,6 +288,7 @@ abstract class ChartOptions {
       ChartHoverOptions hover,
       ChartAnimationOptions animation,
       ChartElementsOptions elements,
+      ChartLayoutOptions layout,
       ChartScales scales,
       num cutoutPercentage});
 
@@ -553,12 +556,26 @@ abstract class ChartHoverOptions {
   external set animationDuration(num v);
   external bool get intersect;
   external set intersect(bool v);
-  external void onHover(dynamic active);
+  external void onHover(MouseEvent event, List activeElements);
   external factory ChartHoverOptions(
       {String mode,
       num animationDuration,
       bool intersect,
-      void Function(dynamic active) onHover});
+      void Function(MouseEvent event, List activeElements) onHover});
+}
+
+@anonymous
+@JS()
+abstract class ActiveChartPoint {
+  external bool get hidden;
+}
+
+extension ActiveChartPointExtension on ActiveChartPoint{
+  int get datasetIndex => getProperty(this, '_datasetIndex');
+  int get index => getProperty(this, '_index');
+  dynamic get model => getProperty(this, '_model');
+  dynamic get start => getProperty(this, '_start');
+  dynamic get view => getProperty(this, '_view');
 }
 
 @anonymous
