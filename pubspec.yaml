@@ -3,7 +3,7 @@ version: 0.5.2
 description: Chart.js wrapper for Dart
 homepage: https://github.com/google/chartjs.dart/
 environment:
-  sdk: '>=2.0.0 <3.0.0'
+  sdk: '>=2.6.0 <3.0.0'
 
 dependencies:
   js: ^0.6.0
