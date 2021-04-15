@@ -5,8 +5,7 @@
 @JS('Chart')
 library chart.js;
 
-import 'dart:html'
-    show CanvasRenderingContext2D, CanvasElement, Event, MouseEvent;
+import 'dart:html' show CanvasRenderingContext2D, CanvasElement, Event, MouseEvent;
 import 'package:js/js.dart';
 
 import 'src/func.dart';
@@ -24,9 +23,7 @@ import 'src/func.dart';
 /// TypeScript Version: 2.3
 @JS()
 class Chart {
-  external factory Chart(
-      dynamic /*String|CanvasRenderingContext2D|CanvasElement|ArrayLike<CanvasRenderingContext2D|CanvasElement>*/ context,
-      ChartConfiguration options);
+  external factory Chart(dynamic /*String|CanvasRenderingContext2D|CanvasElement|ArrayLike<CanvasRenderingContext2D|CanvasElement>*/ context, ChartConfiguration options);
   external ChartConfiguration get config;
   external set config(ChartConfiguration v);
   external LinearChartData get data;
@@ -54,8 +51,7 @@ class Chart {
   external Func1<dynamic, List<dynamic /*{}*/ >> get getDatasetAtEvent;
   external set getDatasetAtEvent(Func1<dynamic, List<dynamic /*{}*/ >> v);
   external CanvasRenderingContext2D /*CanvasRenderingContext2D|Null*/ get ctx;
-  external set ctx(
-      CanvasRenderingContext2D /*CanvasRenderingContext2D|Null*/ v);
+  external set ctx(CanvasRenderingContext2D /*CanvasRenderingContext2D|Null*/ v);
   external CanvasElement /*CanvasElement|Null*/ get canvas;
   external set canvas(CanvasElement /*CanvasElement|Null*/ v);
   external ChartArea get chartArea;
@@ -179,16 +175,7 @@ abstract class ChartLegendItem {
   external set lineWidth(num v);
   external String get strokeStyle;
   external set strokeStyle(String v);
-  external factory ChartLegendItem(
-      {String text,
-      String fillStyle,
-      bool hidden,
-      String lineCap,
-      List<num> lineDash,
-      num lineDashOffset,
-      String lineJoin,
-      num lineWidth,
-      String strokeStyle});
+  external factory ChartLegendItem({String text, String fillStyle, bool hidden, String lineCap, List<num> lineDash, num lineDashOffset, String lineJoin, num lineWidth, String strokeStyle});
 }
 
 @anonymous
@@ -202,8 +189,7 @@ abstract class ChartTooltipItem {
   external set datasetIndex(num v);
   external num get index;
   external set index(num v);
-  external factory ChartTooltipItem(
-      {String xLabel, String yLabel, num datasetIndex, num index});
+  external factory ChartTooltipItem({String xLabel, String yLabel, num datasetIndex, num index});
 }
 
 @anonymous
@@ -229,8 +215,7 @@ abstract class ChartAnimationParameter {
   external set chartInstance(dynamic v);
   external dynamic get animationObject;
   external set animationObject(dynamic v);
-  external factory ChartAnimationParameter(
-      {dynamic chartInstance, dynamic animationObject});
+  external factory ChartAnimationParameter({dynamic chartInstance, dynamic animationObject});
 }
 
 @anonymous
@@ -247,16 +232,12 @@ abstract class ChartPoint {
 @JS()
 abstract class ChartConfiguration {
   external String /*'line'|'bar'|'radar'|'doughnut'|'polarArea'|'bubble'|String*/ get type;
-  external set type(
-      String /*'line'|'bar'|'radar'|'doughnut'|'polarArea'|'bubble'|String*/ v);
+  external set type(String /*'line'|'bar'|'radar'|'doughnut'|'polarArea'|'bubble'|String*/ v);
   external LinearChartData get data;
   external set data(LinearChartData v);
   external ChartOptions get options;
   external set options(ChartOptions v);
-  external factory ChartConfiguration(
-      {String /*'line'|'bar'|'radar'|'doughnut'|'polarArea'|'bubble'|String*/ type,
-      LinearChartData data,
-      ChartOptions options});
+  external factory ChartConfiguration({String /*'line'|'bar'|'radar'|'doughnut'|'polarArea'|'bubble'|String*/ type, LinearChartData data, ChartOptions options});
 }
 
 @anonymous
@@ -266,28 +247,13 @@ abstract class LinearChartData {
   external set labels(List<dynamic /*String|List<String>*/ > v);
   external List<ChartDataSets> get datasets;
   external set datasets(List<ChartDataSets> v);
-  external factory LinearChartData(
-      {List<dynamic /*String|List<String>*/ > labels,
-      List<ChartDataSets> datasets});
+  external factory LinearChartData({List<dynamic /*String|List<String>*/ > labels, List<ChartDataSets> datasets});
 }
 
 @anonymous
 @JS()
 abstract class ChartOptions {
-  external factory ChartOptions(
-      {bool responsive,
-      num responsiveAnimationDuration,
-      bool maintainAspectRatio,
-      List<String> events,
-      Func1Opt1<dynamic, dynamic> onClick,
-      ChartTitleOptions title,
-      ChartLegendOptions legend,
-      ChartTooltipOptions tooltips,
-      ChartHoverOptions hover,
-      ChartAnimationOptions animation,
-      ChartElementsOptions elements,
-      ChartScales scales,
-      num cutoutPercentage});
+  external factory ChartOptions({bool responsive, num responsiveAnimationDuration, bool maintainAspectRatio, List<String> events, Func1Opt1<dynamic, dynamic> onClick, ChartTitleOptions title, ChartLegendOptions legend, ChartTooltipOptions tooltips, ChartHoverOptions hover, ChartAnimationOptions animation, ChartElementsOptions elements, ChartScales scales, num cutoutPercentage});
 
   external bool get responsive;
   external set responsive(bool v);
@@ -297,8 +263,7 @@ abstract class ChartOptions {
   external set maintainAspectRatio(bool v);
   external List<String> get events;
   external set events(List<String> v);
-  external dynamic onClick(
-      [MouseEvent event, List<dynamic /*{}*/ > activeElements]);
+  external dynamic onClick([MouseEvent event, List<dynamic /*{}*/ > activeElements]);
   external ChartTitleOptions get title;
   external set title(ChartTitleOptions v);
   external ChartLegendOptions get legend;
@@ -331,19 +296,14 @@ abstract class ChartOptions {
 @JS()
 abstract class ChartFontOptions {
   external dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ get defaultFontColor;
-  external set defaultFontColor(
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
+  external set defaultFontColor(dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
   external String get defaultFontFamily;
   external set defaultFontFamily(String v);
   external num get defaultFontSize;
   external set defaultFontSize(num v);
   external String get defaultFontStyle;
   external set defaultFontStyle(String v);
-  external factory ChartFontOptions(
-      {dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ defaultFontColor,
-      String defaultFontFamily,
-      num defaultFontSize,
-      String defaultFontStyle});
+  external factory ChartFontOptions({dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ defaultFontColor, String defaultFontFamily, num defaultFontSize, String defaultFontStyle});
 }
 
 @anonymous
@@ -360,24 +320,14 @@ abstract class ChartTitleOptions {
   external String get fontFamily;
   external set fontFamily(String v);
   external dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ get fontColor;
-  external set fontColor(
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
+  external set fontColor(dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
   external String get fontStyle;
   external set fontStyle(String v);
   external num get padding;
   external set padding(num v);
   external String get text;
   external set text(String v);
-  external factory ChartTitleOptions(
-      {bool display,
-      String /*'left'|'right'|'top'|'bottom'*/ position,
-      bool fullWdith,
-      num fontSize,
-      String fontFamily,
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ fontColor,
-      String fontStyle,
-      num padding,
-      String text});
+  external factory ChartTitleOptions({bool display, String /*'left'|'right'|'top'|'bottom'*/ position, bool fullWdith, num fontSize, String fontFamily, dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ fontColor, String fontStyle, num padding, String text});
 }
 
 @anonymous
@@ -395,14 +345,7 @@ abstract class ChartLegendOptions {
   external set labels(ChartLegendLabelOptions v);
   external bool get reverse;
   external set reverse(bool v);
-  external factory ChartLegendOptions(
-      {bool display,
-      String /*'left'|'right'|'top'|'bottom'*/ position,
-      bool fullWidth,
-      void Function(MouseEvent event, ChartLegendItem legendItem) onClick,
-      void Function(MouseEvent event, ChartLegendItem legendItem) onHover,
-      ChartLegendLabelOptions labels,
-      bool reverse});
+  external factory ChartLegendOptions({bool display, String /*'left'|'right'|'top'|'bottom'*/ position, bool fullWidth, void Function(MouseEvent event, ChartLegendItem legendItem) onClick, void Function(MouseEvent event, ChartLegendItem legendItem) onHover, ChartLegendLabelOptions labels, bool reverse});
 }
 
 @anonymous
@@ -415,61 +358,19 @@ abstract class ChartLegendLabelOptions {
   external String get fontStyle;
   external set fontStyle(String v);
   external dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ get fontColor;
-  external set fontColor(
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
+  external set fontColor(dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
   external String get fontFamily;
   external set fontFamily(String v);
   external num get padding;
   external set padding(num v);
   external dynamic generateLabels(dynamic chart);
-  external factory ChartLegendLabelOptions(
-      {num boxWidth,
-      num fontSize,
-      String fontStyle,
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ fontColor,
-      String fontFamily,
-      num padding,
-      dynamic Function(dynamic chart) generateLabels});
+  external factory ChartLegendLabelOptions({num boxWidth, num fontSize, String fontStyle, dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ fontColor, String fontFamily, num padding, dynamic Function(dynamic chart) generateLabels});
 }
 
 @anonymous
 @JS()
 abstract class ChartTooltipOptions {
-  external factory ChartTooltipOptions(
-      {bool enabled,
-      String mode,
-      bool intersect,
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ backdropColor,
-      String titleFontFamily,
-      String titleFontStyle,
-      num titleFontSize,
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ titleFontColor,
-      num titleSpacing,
-      num titleMarginBottom,
-      String bodyFontFamily,
-      num bodyFontSize,
-      String bodyFontStyle,
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ bodyFontColor,
-      num bodySpacing,
-      String footerFontFamily,
-      num footerFontSize,
-      String footerFontStyle,
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ footerFontColor,
-      num footerSpacing,
-      num footerMarginTop,
-      num xPadding,
-      num yPadding,
-      num caretSize,
-      num cornerRadius,
-      String multiKeyBackground,
-      ChartTooltipCallback callbacks,
-      bool filter(ChartTooltipItem item),
-      num itemSort(ChartTooltipItem itemA, ChartTooltipItem itemB),
-      String /*'average'|'nearest'*/ position,
-      num caretPadding,
-      bool displayColors,
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ borderColor,
-      num borderWidth});
+  external factory ChartTooltipOptions({bool enabled, String mode, bool intersect, dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ backdropColor, String titleFontFamily, String titleFontStyle, num titleFontSize, dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ titleFontColor, num titleSpacing, num titleMarginBottom, String bodyFontFamily, num bodyFontSize, String bodyFontStyle, dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ bodyFontColor, num bodySpacing, String footerFontFamily, num footerFontSize, String footerFontStyle, dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ footerFontColor, num footerSpacing, num footerMarginTop, num xPadding, num yPadding, num caretSize, num cornerRadius, String multiKeyBackground, ChartTooltipCallback callbacks, bool filter(ChartTooltipItem item), num itemSort(ChartTooltipItem itemA, ChartTooltipItem itemB), String /*'average'|'nearest'*/ position, num caretPadding, bool displayColors, dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ borderColor, num borderWidth});
   external bool get enabled;
   external set enabled(bool v);
   external void custom(dynamic a);
@@ -478,8 +379,7 @@ abstract class ChartTooltipOptions {
   external bool get intersect;
   external set intersect(bool v);
   external dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ get backgroundColor;
-  external set backgroundColor(
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
+  external set backgroundColor(dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
   external String get titleFontFamily;
   external set titleFontFamily(String v);
   external num get titleFontSize;
@@ -487,8 +387,7 @@ abstract class ChartTooltipOptions {
   external String get titleFontStyle;
   external set titleFontStyle(String v);
   external dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ get titleFontColor;
-  external set titleFontColor(
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
+  external set titleFontColor(dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
   external num get titleSpacing;
   external set titleSpacing(num v);
   external num get titleMarginBottom;
@@ -500,8 +399,7 @@ abstract class ChartTooltipOptions {
   external String get bodyFontStyle;
   external set bodyFontStyle(String v);
   external dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ get bodyFontColor;
-  external set bodyFontColor(
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
+  external set bodyFontColor(dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
   external num get bodySpacing;
   external set bodySpacing(num v);
   external String get footerFontFamily;
@@ -511,8 +409,7 @@ abstract class ChartTooltipOptions {
   external String get footerFontStyle;
   external set footerFontStyle(String v);
   external dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ get footerFontColor;
-  external set footerFontColor(
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
+  external set footerFontColor(dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
   external num get footerSpacing;
   external set footerSpacing(num v);
   external num get footerMarginTop;
@@ -538,8 +435,7 @@ abstract class ChartTooltipOptions {
   external bool get displayColors;
   external set displayColors(bool v);
   external dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ get borderColor;
-  external set borderColor(
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
+  external set borderColor(dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
   external num get borderWidth;
   external set borderWidth(num v);
 }
@@ -554,11 +450,7 @@ abstract class ChartHoverOptions {
   external bool get intersect;
   external set intersect(bool v);
   external void onHover(dynamic active);
-  external factory ChartHoverOptions(
-      {String mode,
-      num animationDuration,
-      bool intersect,
-      void Function(dynamic active) onHover});
+  external factory ChartHoverOptions({String mode, num animationDuration, bool intersect, void Function(dynamic active) onHover});
 }
 
 @anonymous
@@ -597,28 +489,19 @@ abstract class ChartElementsOptions {
   external set arc(ChartArcOptions v);
   external ChartRectangleOptions get rectangle;
   external set rectangle(ChartRectangleOptions v);
-  external factory ChartElementsOptions(
-      {ChartPointOptions point,
-      ChartLineOptions line,
-      ChartArcOptions arc,
-      ChartRectangleOptions rectangle});
+  external factory ChartElementsOptions({ChartPointOptions point, ChartLineOptions line, ChartArcOptions arc, ChartRectangleOptions rectangle});
 }
 
 @anonymous
 @JS()
 abstract class ChartArcOptions {
   external dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ get backgroundColor;
-  external set backgroundColor(
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
+  external set backgroundColor(dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
   external dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ get borderColor;
-  external set borderColor(
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
+  external set borderColor(dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
   external num get borderWidth;
   external set borderWidth(num v);
-  external factory ChartArcOptions(
-      {dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ backgroundColor,
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ borderColor,
-      num borderWidth});
+  external factory ChartArcOptions({dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ backgroundColor, dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ borderColor, num borderWidth});
 }
 
 @anonymous
@@ -627,13 +510,11 @@ abstract class ChartLineOptions {
   external num get tension;
   external set tension(num v);
   external dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ get backgroundColor;
-  external set backgroundColor(
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
+  external set backgroundColor(dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
   external num get borderWidth;
   external set borderWidth(num v);
   external dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ get borderColor;
-  external set borderColor(
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
+  external set borderColor(dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
   external String get borderCapStyle;
   external set borderCapStyle(String v);
   external List<dynamic> get borderDash;
@@ -648,18 +529,7 @@ abstract class ChartLineOptions {
   external set fill(dynamic /*'zero'|'top'|'bottom'|bool*/ v);
   external bool get stepped;
   external set stepped(bool v);
-  external factory ChartLineOptions(
-      {num tension,
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ backgroundColor,
-      num borderWidth,
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ borderColor,
-      String borderCapStyle,
-      List<dynamic> borderDash,
-      num borderDashOffset,
-      String borderJoinStyle,
-      bool capBezierPoints,
-      dynamic /*'zero'|'top'|'bottom'|bool*/ fill,
-      bool stepped});
+  external factory ChartLineOptions({num tension, dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ backgroundColor, num borderWidth, dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ borderColor, String borderCapStyle, List<dynamic> borderDash, num borderDashOffset, String borderJoinStyle, bool capBezierPoints, dynamic /*'zero'|'top'|'bottom'|bool*/ fill, bool stepped});
 }
 
 @anonymous
@@ -668,51 +538,34 @@ abstract class ChartPointOptions {
   external num get radius;
   external set radius(num v);
   external String /*'circle'|'cross'|'crossRot'|'dash'|'line'|'rect'|'rectRounded'|'rectRot'|'star'|'triangle'*/ get pointStyle;
-  external set pointStyle(
-      String /*'circle'|'cross'|'crossRot'|'dash'|'line'|'rect'|'rectRounded'|'rectRot'|'star'|'triangle'*/ v);
+  external set pointStyle(String /*'circle'|'cross'|'crossRot'|'dash'|'line'|'rect'|'rectRounded'|'rectRot'|'star'|'triangle'*/ v);
   external dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ get backgroundColor;
-  external set backgroundColor(
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
+  external set backgroundColor(dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
   external num get borderWidth;
   external set borderWidth(num v);
   external dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ get borderColor;
-  external set borderColor(
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
+  external set borderColor(dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
   external num get hitRadius;
   external set hitRadius(num v);
   external num get hoverRadius;
   external set hoverRadius(num v);
   external num get hoverBorderWidth;
   external set hoverBorderWidth(num v);
-  external factory ChartPointOptions(
-      {num radius,
-      String /*'circle'|'cross'|'crossRot'|'dash'|'line'|'rect'|'rectRounded'|'rectRot'|'star'|'triangle'*/ pointStyle,
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ backgroundColor,
-      num borderWidth,
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ borderColor,
-      num hitRadius,
-      num hoverRadius,
-      num hoverBorderWidth});
+  external factory ChartPointOptions({num radius, String /*'circle'|'cross'|'crossRot'|'dash'|'line'|'rect'|'rectRounded'|'rectRot'|'star'|'triangle'*/ pointStyle, dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ backgroundColor, num borderWidth, dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ borderColor, num hitRadius, num hoverRadius, num hoverBorderWidth});
 }
 
 @anonymous
 @JS()
 abstract class ChartRectangleOptions {
   external dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ get backgroundColor;
-  external set backgroundColor(
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
+  external set backgroundColor(dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
   external num get borderWidth;
   external set borderWidth(num v);
   external dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ get borderColor;
-  external set borderColor(
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
+  external set borderColor(dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
   external String get borderSkipped;
   external set borderSkipped(String v);
-  external factory ChartRectangleOptions(
-      {dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ backgroundColor,
-      num borderWidth,
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ borderColor,
-      String borderSkipped});
+  external factory ChartRectangleOptions({dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ backgroundColor, num borderWidth, dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ borderColor, String borderSkipped});
 }
 
 @anonymous
@@ -720,8 +573,7 @@ abstract class ChartRectangleOptions {
 abstract class ChartLayoutOptions {
   external dynamic /*ChartLayoutPaddingObject|num*/ get padding;
   external set padding(dynamic /*ChartLayoutPaddingObject|num*/ v);
-  external factory ChartLayoutOptions(
-      {dynamic /*ChartLayoutPaddingObject|num*/ padding});
+  external factory ChartLayoutOptions({dynamic /*ChartLayoutPaddingObject|num*/ padding});
 }
 
 @anonymous
@@ -735,8 +587,7 @@ abstract class ChartLayoutPaddingObject {
   external set bottom(num v);
   external num get left;
   external set left(num v);
-  external factory ChartLayoutPaddingObject(
-      {num top, num right, num bottom, num left});
+  external factory ChartLayoutPaddingObject({num top, num right, num bottom, num left});
 }
 
 @anonymous
@@ -745,8 +596,7 @@ abstract class GridLineOptions {
   external bool get display;
   external set display(bool v);
   external dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ get color;
-  external set color(
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
+  external set color(dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
   external List<num> get borderDash;
   external set borderDash(List<num> v);
   external num get borderDashOffset;
@@ -764,29 +614,14 @@ abstract class GridLineOptions {
   external num get zeroLineWidth;
   external set zeroLineWidth(num v);
   external dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ get zeroLineColor;
-  external set zeroLineColor(
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
+  external set zeroLineColor(dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
   external List<num> get zeroLineBorderDash;
   external set zeroLineBorderDash(List<num> v);
   external num get zeroLineBorderDashOffset;
   external set zeroLineBorderDashOffset(num v);
   external bool get offsetGridLines;
   external set offsetGridLines(bool v);
-  external factory GridLineOptions(
-      {bool display,
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ color,
-      List<num> borderDash,
-      num borderDashOffset,
-      num lineWidth,
-      bool drawBorder,
-      bool drawOnChartArea,
-      bool drawTicks,
-      num tickMarkLength,
-      num zeroLineWidth,
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ zeroLineColor,
-      List<num> zeroLineBorderDash,
-      num zeroLineBorderDashOffset,
-      bool offsetGridLines});
+  external factory GridLineOptions({bool display, dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ color, List<num> borderDash, num borderDashOffset, num lineWidth, bool drawBorder, bool drawOnChartArea, bool drawTicks, num tickMarkLength, num zeroLineWidth, dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ zeroLineColor, List<num> zeroLineBorderDash, num zeroLineBorderDashOffset, bool offsetGridLines});
 }
 
 @anonymous
@@ -797,21 +632,14 @@ abstract class ScaleTitleOptions {
   external String get labelString;
   external set labelString(String v);
   external dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ get fontColor;
-  external set fontColor(
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
+  external set fontColor(dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
   external String get fontFamily;
   external set fontFamily(String v);
   external num get fontSize;
   external set fontSize(num v);
   external String get fontStyle;
   external set fontStyle(String v);
-  external factory ScaleTitleOptions(
-      {bool display,
-      String labelString,
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ fontColor,
-      String fontFamily,
-      num fontSize,
-      String fontStyle});
+  external factory ScaleTitleOptions({bool display, String labelString, dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ fontColor, String fontFamily, num fontSize, String fontStyle});
 }
 
 @anonymous
@@ -821,13 +649,11 @@ abstract class TickOptions<T> {
   external set autoSkip(bool v);
   external bool get autoSkipPadding;
   external set autoSkipPadding(bool v);
-  external dynamic /*String|num*/ callback(
-      dynamic value, dynamic index, dynamic values);
+  external dynamic /*String|num*/ callback(dynamic value, dynamic index, dynamic values);
   external bool get display;
   external set display(bool v);
   external dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ get fontColor;
-  external set fontColor(
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
+  external set fontColor(dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
   external String get fontFamily;
   external set fontFamily(String v);
   external num get fontSize;
@@ -851,8 +677,7 @@ abstract class TickOptions<T> {
   external dynamic get max;
   external set max(T v);
   external dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ get backdropColor;
-  external set backdropColor(
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
+  external set backdropColor(dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
   external num get backdropPaddingX;
   external set backdropPaddingX(num v);
   external num get backdropPaddingY;
@@ -861,6 +686,7 @@ abstract class TickOptions<T> {
   external set maxTicksLimit(num v);
   external bool get showLabelBackdrop;
   external set showLabelBackdrop(bool v);
+  external factory TickOptions({num min, num max});
 }
 
 @anonymous
@@ -869,14 +695,10 @@ abstract class AngleLineOptions {
   external bool get display;
   external set display(bool v);
   external dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ get color;
-  external set color(
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
+  external set color(dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
   external num get lineWidth;
   external set lineWidth(num v);
-  external factory AngleLineOptions(
-      {bool display,
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ color,
-      num lineWidth});
+  external factory AngleLineOptions({bool display, dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ color, num lineWidth});
 }
 
 @anonymous
@@ -884,8 +706,7 @@ abstract class AngleLineOptions {
 abstract class PointLabelOptions {
   external dynamic callback(dynamic arg);
   external dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ get fontColor;
-  external set fontColor(
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
+  external set fontColor(dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
   external String get fontFamily;
   external set fontFamily(String v);
   external num get fontSize;
@@ -917,6 +738,7 @@ abstract class LinearTickOptions implements TickOptions<num> {
   external set suggestedMin(num v);
   external num get suggestedMax;
   external set suggestedMax(num v);
+  external factory LinearTickOptions({num min, num max});
 }
 
 @anonymous
@@ -930,6 +752,7 @@ abstract class LogarithmicTickOptions implements TickOptions<num> {
   external num get max;
   @override
   external set max(num v);
+  external factory LogarithmicTickOptions({num min, num max});
 }
 
 /*type ChartColor = string | CanvasGradient | CanvasPattern | string[];*/
@@ -939,13 +762,11 @@ abstract class ChartDataSets {
   external String /*'default'|'monotone'*/ get cubicInterpolationMode;
   external set cubicInterpolationMode(String /*'default'|'monotone'*/ v);
   external dynamic /*String|CanvasGradient|CanvasPattern|List<String>|List<String|CanvasGradient|CanvasPattern|List<String>>*/ get backgroundColor;
-  external set backgroundColor(
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>|List<String|CanvasGradient|CanvasPattern|List<String>>*/ v);
+  external set backgroundColor(dynamic /*String|CanvasGradient|CanvasPattern|List<String>|List<String|CanvasGradient|CanvasPattern|List<String>>*/ v);
   external num get borderWidth;
   external set borderWidth(num v);
   external dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ get borderColor;
-  external set borderColor(
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
+  external set borderColor(dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ v);
   external String get borderCapStyle;
   external set borderCapStyle(String v);
   external List<num> get borderDash;
@@ -973,11 +794,9 @@ abstract class ChartDataSets {
   external dynamic /*'before'|'after'|bool*/ get steppedLine;
   external set steppedLine(dynamic /*'before'|'after'|bool*/ v);
   external dynamic /*String|CanvasGradient|CanvasPattern|List<String>|List<String|CanvasGradient|CanvasPattern|List<String>>*/ get pointBorderColor;
-  external set pointBorderColor(
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>|List<String|CanvasGradient|CanvasPattern|List<String>>*/ v);
+  external set pointBorderColor(dynamic /*String|CanvasGradient|CanvasPattern|List<String>|List<String|CanvasGradient|CanvasPattern|List<String>>*/ v);
   external dynamic /*String|CanvasGradient|CanvasPattern|List<String>|List<String|CanvasGradient|CanvasPattern|List<String>>*/ get pointBackgroundColor;
-  external set pointBackgroundColor(
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>|List<String|CanvasGradient|CanvasPattern|List<String>>*/ v);
+  external set pointBackgroundColor(dynamic /*String|CanvasGradient|CanvasPattern|List<String>|List<String|CanvasGradient|CanvasPattern|List<String>>*/ v);
   external dynamic /*num|List<num>*/ get pointBorderWidth;
   external set pointBorderWidth(dynamic /*num|List<num>*/ v);
   external dynamic /*num|List<num>*/ get pointRadius;
@@ -987,16 +806,13 @@ abstract class ChartDataSets {
   external dynamic /*num|List<num>*/ get pointHitRadius;
   external set pointHitRadius(dynamic /*num|List<num>*/ v);
   external dynamic /*String|CanvasGradient|CanvasPattern|List<String>|List<String|CanvasGradient|CanvasPattern|List<String>>*/ get pointHoverBackgroundColor;
-  external set pointHoverBackgroundColor(
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>|List<String|CanvasGradient|CanvasPattern|List<String>>*/ v);
+  external set pointHoverBackgroundColor(dynamic /*String|CanvasGradient|CanvasPattern|List<String>|List<String|CanvasGradient|CanvasPattern|List<String>>*/ v);
   external dynamic /*String|CanvasGradient|CanvasPattern|List<String>|List<String|CanvasGradient|CanvasPattern|List<String>>*/ get pointHoverBorderColor;
-  external set pointHoverBorderColor(
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>|List<String|CanvasGradient|CanvasPattern|List<String>>*/ v);
+  external set pointHoverBorderColor(dynamic /*String|CanvasGradient|CanvasPattern|List<String>|List<String|CanvasGradient|CanvasPattern|List<String>>*/ v);
   external dynamic /*num|List<num>*/ get pointHoverBorderWidth;
   external set pointHoverBorderWidth(dynamic /*num|List<num>*/ v);
   external dynamic /*'circle'|'cross'|'crossRot'|'dash'|'line'|'rect'|'rectRounded'|'rectRot'|'star'|'triangle'|ImageElement|List<'circle'|'cross'|'crossRot'|'dash'|'line'|'rect'|'rectRounded'|'rectRot'|'star'|'triangle'|ImageElement>*/ get pointStyle;
-  external set pointStyle(
-      dynamic /*'circle'|'cross'|'crossRot'|'dash'|'line'|'rect'|'rectRounded'|'rectRot'|'star'|'triangle'|ImageElement|List<'circle'|'cross'|'crossRot'|'dash'|'line'|'rect'|'rectRounded'|'rectRot'|'star'|'triangle'|ImageElement>*/ v);
+  external set pointStyle(dynamic /*'circle'|'cross'|'crossRot'|'dash'|'line'|'rect'|'rectRounded'|'rectRot'|'star'|'triangle'|ImageElement|List<'circle'|'cross'|'crossRot'|'dash'|'line'|'rect'|'rectRounded'|'rectRot'|'star'|'triangle'|ImageElement>*/ v);
   external String get xAxisID;
   external set xAxisID(String v);
   external String get yAxisID;
@@ -1013,50 +829,14 @@ abstract class ChartDataSets {
   external set stack(String v);
   external bool get spanGaps;
   external set spanGaps(bool v);
-  external factory ChartDataSets(
-      {String /*'default'|'monotone'*/ cubicInterpolationMode,
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>|List<String|CanvasGradient|CanvasPattern|List<String>>*/ backgroundColor,
-      num borderWidth,
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ borderColor,
-      String borderCapStyle,
-      List<num> borderDash,
-      num borderDashOffset,
-      String borderJoinStyle,
-      String /*'left'|'right'|'top'|'bottom'*/ borderSkipped,
-      List<dynamic> /*List<num>|List<ChartPoint>*/ data,
-      dynamic /*bool|num|String*/ fill,
-      dynamic /*String|List<String>*/ hoverBackgroundColor,
-      dynamic /*String|List<String>*/ hoverBorderColor,
-      dynamic /*num|List<num>*/ hoverBorderWidth,
-      String label,
-      num lineTension,
-      dynamic /*'before'|'after'|bool*/ steppedLine,
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>|List<String|CanvasGradient|CanvasPattern|List<String>>*/ pointBorderColor,
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>|List<String|CanvasGradient|CanvasPattern|List<String>>*/ pointBackgroundColor,
-      dynamic /*num|List<num>*/ pointBorderWidth,
-      dynamic /*num|List<num>*/ pointRadius,
-      dynamic /*num|List<num>*/ pointHoverRadius,
-      dynamic /*num|List<num>*/ pointHitRadius,
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>|List<String|CanvasGradient|CanvasPattern|List<String>>*/ pointHoverBackgroundColor,
-      dynamic /*String|CanvasGradient|CanvasPattern|List<String>|List<String|CanvasGradient|CanvasPattern|List<String>>*/ pointHoverBorderColor,
-      dynamic /*num|List<num>*/ pointHoverBorderWidth,
-      dynamic /*'circle'|'cross'|'crossRot'|'dash'|'line'|'rect'|'rectRounded'|'rectRot'|'star'|'triangle'|ImageElement|List<'circle'|'cross'|'crossRot'|'dash'|'line'|'rect'|'rectRounded'|'rectRot'|'star'|'triangle'|ImageElement>*/ pointStyle,
-      String xAxisID,
-      String yAxisID,
-      String type,
-      bool hidden,
-      bool hideInLegendAndTooltip,
-      bool showLine,
-      String stack,
-      bool spanGaps});
+  external factory ChartDataSets({String /*'default'|'monotone'*/ cubicInterpolationMode, dynamic /*String|CanvasGradient|CanvasPattern|List<String>|List<String|CanvasGradient|CanvasPattern|List<String>>*/ backgroundColor, num borderWidth, dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ borderColor, String borderCapStyle, List<num> borderDash, num borderDashOffset, String borderJoinStyle, String /*'left'|'right'|'top'|'bottom'*/ borderSkipped, List<dynamic> /*List<num>|List<ChartPoint>*/ data, dynamic /*bool|num|String*/ fill, dynamic /*String|List<String>*/ hoverBackgroundColor, dynamic /*String|List<String>*/ hoverBorderColor, dynamic /*num|List<num>*/ hoverBorderWidth, String label, num lineTension, dynamic /*'before'|'after'|bool*/ steppedLine, dynamic /*String|CanvasGradient|CanvasPattern|List<String>|List<String|CanvasGradient|CanvasPattern|List<String>>*/ pointBorderColor, dynamic /*String|CanvasGradient|CanvasPattern|List<String>|List<String|CanvasGradient|CanvasPattern|List<String>>*/ pointBackgroundColor, dynamic /*num|List<num>*/ pointBorderWidth, dynamic /*num|List<num>*/ pointRadius, dynamic /*num|List<num>*/ pointHoverRadius, dynamic /*num|List<num>*/ pointHitRadius, dynamic /*String|CanvasGradient|CanvasPattern|List<String>|List<String|CanvasGradient|CanvasPattern|List<String>>*/ pointHoverBackgroundColor, dynamic /*String|CanvasGradient|CanvasPattern|List<String>|List<String|CanvasGradient|CanvasPattern|List<String>>*/ pointHoverBorderColor, dynamic /*num|List<num>*/ pointHoverBorderWidth, dynamic /*'circle'|'cross'|'crossRot'|'dash'|'line'|'rect'|'rectRounded'|'rectRot'|'star'|'triangle'|ImageElement|List<'circle'|'cross'|'crossRot'|'dash'|'line'|'rect'|'rectRounded'|'rectRot'|'star'|'triangle'|ImageElement>*/ pointStyle, String xAxisID, String yAxisID, String type, bool hidden, bool hideInLegendAndTooltip, bool showLine, String stack, bool spanGaps});
 }
 
 @anonymous
 @JS()
 abstract class ChartScales<T extends TickOptions> {
   external String /*'category'|'linear'|'logarithmic'|'time'|'radialLinear'|String*/ get type;
-  external set type(
-      String /*'category'|'linear'|'logarithmic'|'time'|'radialLinear'|String*/ v);
+  external set type(String /*'category'|'linear'|'logarithmic'|'time'|'radialLinear'|String*/ v);
   external bool get display;
   external set display(bool v);
   external String /*'left'|'right'|'top'|'bottom'|String*/ get position;
@@ -1071,23 +851,14 @@ abstract class ChartScales<T extends TickOptions> {
   external set xAxes(List<ChartXAxe> v);
   external List<ChartYAxe> get yAxes;
   external set yAxes(List<ChartYAxe> v);
-  external factory ChartScales(
-      {String /*'category'|'linear'|'logarithmic'|'time'|'radialLinear'|String*/ type,
-      bool display,
-      String /*'left'|'right'|'top'|'bottom'|String*/ position,
-      GridLineOptions gridLines,
-      ScaleTitleOptions scaleLabel,
-      TickOptions ticks,
-      List<ChartXAxe> xAxes,
-      List<ChartYAxe> yAxes});
+  external factory ChartScales({String /*'category'|'linear'|'logarithmic'|'time'|'radialLinear'|String*/ type, bool display, String /*'left'|'right'|'top'|'bottom'|String*/ position, GridLineOptions gridLines, ScaleTitleOptions scaleLabel, TickOptions ticks, List<ChartXAxe> xAxes, List<ChartYAxe> yAxes});
 }
 
 @anonymous
 @JS()
 abstract class CommonAxe {
   external String /*'category'|'linear'|'logarithmic'|'time'|'radialLinear'|String*/ get type;
-  external set type(
-      String /*'category'|'linear'|'logarithmic'|'time'|'radialLinear'|String*/ v);
+  external set type(String /*'category'|'linear'|'logarithmic'|'time'|'radialLinear'|String*/ v);
   external bool get display;
   external set display(bool v);
   external String get id;
@@ -1129,38 +900,14 @@ abstract class ChartXAxe implements CommonAxe {
   external set barPercentage(num v);
   external TimeScale get time;
   external set time(TimeScale v);
-  external factory ChartXAxe(
-      {String /*'category'|'linear'|'logarithmic'|'time'|'radialLinear'|String*/ type,
-      bool display,
-      String id,
-      bool stacked,
-      String position,
-      TickOptions ticks,
-      GridLineOptions gridLines,
-      num barThickness,
-      ScaleTitleOptions scaleLabel,
-      num categoryPercentage,
-      num barPercentage,
-      TimeScale time});
+  external factory ChartXAxe({String /*'category'|'linear'|'logarithmic'|'time'|'radialLinear'|String*/ type, bool display, String id, bool stacked, String position, TickOptions ticks, GridLineOptions gridLines, num barThickness, ScaleTitleOptions scaleLabel, num categoryPercentage, num barPercentage, TimeScale time});
 }
 
 /// tslint:disable-next-line no-empty-interface
 @anonymous
 @JS()
 abstract class ChartYAxe implements CommonAxe {
-  external factory ChartYAxe(
-      {String /*'category'|'linear'|'logarithmic'|'time'|'radialLinear'|String*/ type,
-      bool display,
-      String id,
-      bool stacked,
-      String position,
-      TickOptions ticks,
-      GridLineOptions gridLines,
-      num barThickness,
-      ScaleTitleOptions scaleLabel,
-      num categoryPercentage,
-      num barPercentage,
-      TimeScale time});
+  external factory ChartYAxe({String /*'category'|'linear'|'logarithmic'|'time'|'radialLinear'|String*/ type, bool display, String id, bool stacked, String position, TickOptions ticks, GridLineOptions gridLines, num barThickness, ScaleTitleOptions scaleLabel, num categoryPercentage, num barPercentage, TimeScale time});
 }
 
 @anonymous
@@ -1170,15 +917,7 @@ abstract class LinearScale implements ChartScales<LinearTickOptions> {
   external LinearTickOptions get ticks;
   @override
   external set ticks(LinearTickOptions v);
-  external factory LinearScale(
-      {LinearTickOptions ticks,
-      String /*'category'|'linear'|'logarithmic'|'time'|'radialLinear'|String*/ type,
-      bool display,
-      String /*'left'|'right'|'top'|'bottom'|String*/ position,
-      GridLineOptions gridLines,
-      ScaleTitleOptions scaleLabel,
-      List<ChartXAxe> xAxes,
-      List<ChartYAxe> yAxes});
+  external factory LinearScale({LinearTickOptions ticks, String /*'category'|'linear'|'logarithmic'|'time'|'radialLinear'|String*/ type, bool display, String /*'left'|'right'|'top'|'bottom'|String*/ position, GridLineOptions gridLines, ScaleTitleOptions scaleLabel, List<ChartXAxe> xAxes, List<ChartYAxe> yAxes});
 }
 
 @anonymous
@@ -1188,15 +927,7 @@ abstract class LogarithmicScale implements ChartScales<LogarithmicTickOptions> {
   external LogarithmicTickOptions get ticks;
   @override
   external set ticks(LogarithmicTickOptions v);
-  external factory LogarithmicScale(
-      {LogarithmicTickOptions ticks,
-      String /*'category'|'linear'|'logarithmic'|'time'|'radialLinear'|String*/ type,
-      bool display,
-      String /*'left'|'right'|'top'|'bottom'|String*/ position,
-      GridLineOptions gridLines,
-      ScaleTitleOptions scaleLabel,
-      List<ChartXAxe> xAxes,
-      List<ChartYAxe> yAxes});
+  external factory LogarithmicScale({LogarithmicTickOptions ticks, String /*'category'|'linear'|'logarithmic'|'time'|'radialLinear'|String*/ type, bool display, String /*'left'|'right'|'top'|'bottom'|String*/ position, GridLineOptions gridLines, ScaleTitleOptions scaleLabel, List<ChartXAxe> xAxes, List<ChartYAxe> yAxes});
 }
 
 @anonymous
@@ -1220,16 +951,7 @@ abstract class TimeDisplayFormat {
   external set quarter(String v);
   external String get year;
   external set year(String v);
-  external factory TimeDisplayFormat(
-      {String millisecond,
-      String second,
-      String minute,
-      String hour,
-      String day,
-      String week,
-      String month,
-      String quarter,
-      String year});
+  external factory TimeDisplayFormat({String millisecond, String second, String minute, String hour, String day, String week, String month, String quarter, String year});
 }
 
 @anonymous
@@ -1246,37 +968,16 @@ abstract class TimeScale implements ChartScales {
   external dynamic /*String|Func1<dynamic, dynamic>*/ get parser;
   external set parser(dynamic /*String|Func1<dynamic, dynamic>*/ v);
   external String /*'millisecond'|'second'|'minute'|'hour'|'day'|'week'|'month'|'quarter'|'year'*/ get round;
-  external set round(
-      String /*'millisecond'|'second'|'minute'|'hour'|'day'|'week'|'month'|'quarter'|'year'*/ v);
+  external set round(String /*'millisecond'|'second'|'minute'|'hour'|'day'|'week'|'month'|'quarter'|'year'*/ v);
   external String get tooltipFormat;
   external set tooltipFormat(String v);
   external String /*'millisecond'|'second'|'minute'|'hour'|'day'|'week'|'month'|'quarter'|'year'*/ get unit;
-  external set unit(
-      String /*'millisecond'|'second'|'minute'|'hour'|'day'|'week'|'month'|'quarter'|'year'*/ v);
+  external set unit(String /*'millisecond'|'second'|'minute'|'hour'|'day'|'week'|'month'|'quarter'|'year'*/ v);
   external num get unitStepSize;
   external set unitStepSize(num v);
   external String /*'millisecond'|'second'|'minute'|'hour'|'day'|'week'|'month'|'quarter'|'year'*/ get minUnit;
-  external set minUnit(
-      String /*'millisecond'|'second'|'minute'|'hour'|'day'|'week'|'month'|'quarter'|'year'*/ v);
-  external factory TimeScale(
-      {TimeDisplayFormat displayFormats,
-      bool isoWeekday,
-      String max,
-      String min,
-      dynamic /*String|Func1<dynamic, dynamic>*/ parser,
-      String /*'millisecond'|'second'|'minute'|'hour'|'day'|'week'|'month'|'quarter'|'year'*/ round,
-      String tooltipFormat,
-      String /*'millisecond'|'second'|'minute'|'hour'|'day'|'week'|'month'|'quarter'|'year'*/ unit,
-      num unitStepSize,
-      String /*'millisecond'|'second'|'minute'|'hour'|'day'|'week'|'month'|'quarter'|'year'*/ minUnit,
-      String /*'category'|'linear'|'logarithmic'|'time'|'radialLinear'|String*/ type,
-      bool display,
-      String /*'left'|'right'|'top'|'bottom'|String*/ position,
-      GridLineOptions gridLines,
-      ScaleTitleOptions scaleLabel,
-      TickOptions ticks,
-      List<ChartXAxe> xAxes,
-      List<ChartYAxe> yAxes});
+  external set minUnit(String /*'millisecond'|'second'|'minute'|'hour'|'day'|'week'|'month'|'quarter'|'year'*/ v);
+  external factory TimeScale({TimeDisplayFormat displayFormats, bool isoWeekday, String max, String min, dynamic /*String|Func1<dynamic, dynamic>*/ parser, String /*'millisecond'|'second'|'minute'|'hour'|'day'|'week'|'month'|'quarter'|'year'*/ round, String tooltipFormat, String /*'millisecond'|'second'|'minute'|'hour'|'day'|'week'|'month'|'quarter'|'year'*/ unit, num unitStepSize, String /*'millisecond'|'second'|'minute'|'hour'|'day'|'week'|'month'|'quarter'|'year'*/ minUnit, String /*'category'|'linear'|'logarithmic'|'time'|'radialLinear'|String*/ type, bool display, String /*'left'|'right'|'top'|'bottom'|String*/ position, GridLineOptions gridLines, ScaleTitleOptions scaleLabel, TickOptions ticks, List<ChartXAxe> xAxes, List<ChartYAxe> yAxes});
 }
 
 @anonymous
@@ -1290,11 +991,7 @@ abstract class RadialLinearScale {
   external set pointLabels(PointLabelOptions v);
   external TickOptions get ticks;
   external set ticks(TickOptions v);
-  external factory RadialLinearScale(
-      {bool lineArc,
-      AngleLineOptions angleLines,
-      PointLabelOptions pointLabels,
-      TickOptions ticks});
+  external factory RadialLinearScale({bool lineArc, AngleLineOptions angleLines, PointLabelOptions pointLabels, TickOptions ticks});
 }
 
 // End module Chart
