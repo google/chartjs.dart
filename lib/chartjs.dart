@@ -861,6 +861,7 @@ abstract class TickOptions<T> {
   external set maxTicksLimit(num v);
   external bool get showLabelBackdrop;
   external set showLabelBackdrop(bool v);
+  external factory TickOptions({dynamic min, dynamic max});
 }
 
 @anonymous
@@ -917,6 +918,7 @@ abstract class LinearTickOptions implements TickOptions<num> {
   external set suggestedMin(num v);
   external num get suggestedMax;
   external set suggestedMax(num v);
+  external factory LinearTickOptions({dynamic min, dynamic max});
 }
 
 @anonymous
@@ -930,6 +932,7 @@ abstract class LogarithmicTickOptions implements TickOptions<num> {
   external num get max;
   @override
   external set max(num v);
+  external factory LogarithmicTickOptions({dynamic min, dynamic max});
 }
 
 /*type ChartColor = string | CanvasGradient | CanvasPattern | string[];*/
