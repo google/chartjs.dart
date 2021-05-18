@@ -383,6 +383,8 @@ abstract class ChartTitleOptions {
 @anonymous
 @JS()
 abstract class ChartLegendOptions {
+  external String /*'start'|'center'|'end'*/ get align;
+  external set align(String /*'start'|'center'|'end'*/ v);
   external bool get display;
   external set display(bool v);
   external String /*'left'|'right'|'top'|'bottom'*/ get position;
@@ -396,7 +398,8 @@ abstract class ChartLegendOptions {
   external bool get reverse;
   external set reverse(bool v);
   external factory ChartLegendOptions(
-      {bool display,
+      {String /*'start'|'center'|'end'*/ align,
+      bool display,
       String /*'left'|'right'|'top'|'bottom'*/ position,
       bool fullWidth,
       void Function(MouseEvent event, ChartLegendItem legendItem) onClick,
