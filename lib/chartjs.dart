@@ -466,8 +466,8 @@ abstract class ChartTooltipOptions {
       num cornerRadius,
       String multiKeyBackground,
       ChartTooltipCallback callbacks,
-      bool filter(ChartTooltipItem item),
-      num itemSort(ChartTooltipItem itemA, ChartTooltipItem itemB),
+      bool Function(ChartTooltipItem item) filter,
+      num Function(ChartTooltipItem itemA, ChartTooltipItem itemB) itemSort,
       String /*'average'|'nearest'*/ position,
       num caretPadding,
       bool displayColors,
@@ -849,9 +849,9 @@ abstract class TickOptions<T> {
   external set padding(num v);
   external bool get reverse;
   external set reverse(bool v);
-  external dynamic get min;
+  external T get min;
   external set min(T v);
-  external dynamic get max;
+  external T get max;
   external set max(T v);
   external dynamic /*String|CanvasGradient|CanvasPattern|List<String>*/ get backdropColor;
   external set backdropColor(
