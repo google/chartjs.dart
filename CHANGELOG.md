@@ -1,6 +1,6 @@
 ## 0.6.0
 
-* Added NNBD support
+* Migrated to null-safety
 * Updated linter to `package:lints`
 
 ## 0.5.2
