@@ -1,3 +1,8 @@
+## 0.6.0
+
+* Migrated to null-safety
+* Updated linter to `package:lints`
+
 ## 0.5.2
 
 * Remove `fackeConstructor$` from two classes.
