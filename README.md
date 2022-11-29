@@ -1,3 +1,8 @@
+# ARCHIVED
+
+This package and its code is no longer maintained.
+
+
 A generated Dart API for [Chart.js](https://www.chartjs.org/)
 using [pkg/js](https://pub.dev/packages/js) and
 [dart_js_facade_gen](https://github.com/dart-lang/js_facade_gen).
